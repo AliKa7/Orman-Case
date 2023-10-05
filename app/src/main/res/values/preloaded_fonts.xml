@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/</item>
+        <item>@font/aclonica</item>
+        <item>@font/allerta</item>
+        <item>@font/archivo_black</item>
+        <item>@font/montserrat</item>
+        <item>@font/montserrat_bold</item>
+        <item>@font/montserrat_medium</item>
+        <item>@font/montserrat_semibold</item>
+        <item>@font/roboto_black</item>
+        <item>@font/russo_one</item>
+        <item>@font/ubuntu_bold</item>
+    </array>
+</resources>
