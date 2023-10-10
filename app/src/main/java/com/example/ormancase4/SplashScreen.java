@@ -19,8 +19,8 @@ public class SplashScreen extends AppCompatActivity {
         welcomeText = findViewById(R.id.welcome);
         logoImage.setAlpha(0.1f);
         welcomeText.setAlpha(0.1f);
-        logoImage.animate().alpha(1f).setDuration(2000);
-        welcomeText.animate().alpha(1f).setDuration(2000);
+        logoImage.animate().alpha(1f).setDuration(300);
+        welcomeText.animate().alpha(1f).setDuration(300);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -28,6 +28,6 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 4000);
+        }, 400);
     }
 }

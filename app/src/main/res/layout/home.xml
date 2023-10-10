@@ -8,70 +8,90 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="395dp"
-        android:layout_height="136dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Orman Case App"
-        android:textAlignment="center"
-        android:textColor="#5E69EE"
-        android:textSize="48sp"
-        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Найти ящики"
+        android:textColor="@color/main_color"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.945">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/toMainActivity"
-        android:layout_width="219dp"
-        android:layout_height="99dp"
-        android:background="@drawable/button_style"
-        android:backgroundTint="#5E69EE"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="Найти кейсы поблизости меня"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/white"
-        android:textColorLink="#2E0E0E"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/toCallSOSButton"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/button_corners_10_stl"
+            android:backgroundTint="@color/soft_color"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Вызов SOS"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/main_color" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/toCaseAppearanceButton"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_corners_10_stl"
+            android:backgroundTint="@color/soft_color"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Состав ящика"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/main_color" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/toAddnInfoButton"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_corners_10_stl"
+            android:backgroundTint="@color/soft_color"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Инструкция"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/main_color"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <!--<ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="162dp"
+        android:layout_height="145dp"
+        app:srcCompat="@drawable/box_icon"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="108dp" />!-->
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="169dp"
+        android:layout_height="160dp"
+        android:background="@drawable/box_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.446" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sostavButton"
-        android:layout_width="210dp"
-        android:layout_height="70dp"
-        android:background="@drawable/button_style2"
-        android:backgroundTint="#5E69EE"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="Состав кейса"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/toAddnInfo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toMainActivity" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/toAddnInfo"
-        android:layout_width="346dp"
-        android:layout_height="91dp"
-        android:background="@drawable/button_style2"
-        android:backgroundTint="#39AFEA"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="Правила поведения в зоне пожара"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/white"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957" />
+        app:layout_constraintVertical_bias="0.257" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

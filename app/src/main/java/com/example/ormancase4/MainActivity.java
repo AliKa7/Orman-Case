@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,35 +37,29 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap myMap;
     SupportMapFragment mapFragment;
     private final int FINE_PERMISSION_CODE = 1;
-    private Location currentLocation;
-    private LatLng userLocationPoint;
-    private Polyline polyLine;
+    private Location userLocation;
+    private LatLng userLatLng;
     private FusedLocationProviderClient fusedLocationProviderClient;
     TextView distanceText;
-    Button toUserLocationButton;
     Button gotoNavigationButton;
     Button caseFindedButton;
-    MarkerOptions case1Options = new MarkerOptions().position(new LatLng(52.227918, 76.985597)).title("case 111").draggable(true);
-    MarkerOptions case2Options;
-    MarkerOptions case3Options;
-    MarkerOptions case4Options;
-    MarkerOptions case5Options;
     MarkerOptions closestCaseOptions;
+    ArrayList<MarkerOptions> markerOptionsList = new ArrayList<>();
+    int markerIdx = 1;
+    ArrayList<LatLng> latLngList = new ArrayList<>();
+    private Polyline polyLine;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toUserLocationButton = findViewById(R.id.toUserLocation);
+        getSupportActionBar().setTitle("Поиск ящиков");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.white_back_arrow);
         distanceText = findViewById(R.id.distanceText);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getLastLocation();
-        toUserLocationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                animateCamera();
-            }
-        });
-        gotoNavigationButton = findViewById(R.id.goToInstruction);
+        gotoNavigationButton = findViewById(R.id.goToNavigation);
         gotoNavigationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         caseFindedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CaseInstruction.class);
+                Intent intent = new Intent(MainActivity.this, AfterFinding.class);
                 startActivity(intent);
             }
         });
@@ -94,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onSuccess(Location location) {
                 if (location != null) {
-                    currentLocation = location;
+                    userLocation = location;
                     mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
                     mapFragment.getMapAsync(MainActivity.this);
                 }
@@ -111,136 +106,87 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         myMap.getUiSettings().setCompassEnabled(true);
         myMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
             @Override
-            public void onMarkerDrag(@NonNull Marker marker) {}
+            public void onMarkerDrag(@NonNull Marker marker) {
+            }
 
             @Override
             public void onMarkerDragEnd(@NonNull Marker marker) {
-                /*case1Options.position(marker.getPosition());
-                lineBtwnUserNBox.remove();
-                drawPolyline();
-                findDistanceBetweenTwo(userLocationPoint, case1Options.getPosition());*/
                 String markerTitle = marker.getTitle();
-                switch (markerTitle) {
-                    case "Орман кейс 1": case1Options.position(marker.getPosition()); break;
-                    case "Орман кейс 2": case2Options.position(marker.getPosition()); break;
-                    case "Орман кейс 3": case3Options.position(marker.getPosition()); break;
-                    case "Орман кейс 4": case4Options.position(marker.getPosition()); break;
-                    case "Орман кейс 5": case5Options.position(marker.getPosition()); break;
+                for (int i = 0; i < markerOptionsList.size(); i++) {
+                    if (markerOptionsList.get(i).getTitle().equals(marker.getTitle())) {
+                        markerOptionsList.get(i).position(marker.getPosition());
+                    }
                 }
-                polyLine.remove();
                 findClosestMarker();
             }
 
             @Override
-            public void onMarkerDragStart(@NonNull Marker marker) {}
+            public void onMarkerDragStart(@NonNull Marker marker) {
+            }
         });
     }
+
     public void animateCamera() {
-        myMap.animateCamera(CameraUpdateFactory.newLatLngZoom(userLocationPoint, 15f));
+        myMap.animateCamera(CameraUpdateFactory.newLatLngZoom(userLatLng, 15f));
         // mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mTimeSquare, 15f));
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode==FINE_PERMISSION_CODE) {
+        if (requestCode == FINE_PERMISSION_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getLastLocation();
-            }
-            else {
-                Snackbar.make(this.getCurrentFocus(), "Пожалуйста, разрешите разрешение на использование приложением данных о вашем местоположении", Snackbar.LENGTH_LONG).show();
+            } else {
+                Snackbar.make(this.getCurrentFocus(), "Пожалуйста, дайте разрешение на использование приложением данных о вашем местоположении", Snackbar.LENGTH_LONG).show();
             }
         }
     }
+
     private void addAllMarkersOnMap() {
-        LatLng abai = new LatLng(52.285426, 76.937295);
-        userLocationPoint = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        MarkerOptions userMarkerOptions = new MarkerOptions().position(userLocationPoint).title("Ваше местоположение");
+        //adding user marker
+        userLatLng = new LatLng(userLocation.getLatitude(), userLocation.getLongitude());
+        MarkerOptions userMarkerOptions = new MarkerOptions().position(userLatLng).title("Ваше местоположение");
         userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         myMap.addMarker(userMarkerOptions);
-
-        ArrayList<MarkerOptions> cases = new ArrayList<>();
-        case1Options = new MarkerOptions().position(new LatLng(52.227918, 76.985597)).title("Орман кейс 1").draggable(true);
-        myMap.addMarker(case1Options);
-        case2Options = new MarkerOptions().position(new LatLng(52.199979, 76.932092)).title("Орман кейс 2").draggable(true);
-        cases.add(case2Options);
-        case3Options = new MarkerOptions().position(new LatLng(52.251392, 76.882356)).title("Орман кейс 3").draggable(true);
-        cases.add(case3Options);
-        case4Options = new MarkerOptions().position(new LatLng(52.132182, 77.003868)).title("Орман кейс 4").draggable(true);
-        cases.add(case4Options);
-        case5Options = new MarkerOptions().position(new LatLng(52.249578, 77.026490)).title("Орман кейс 5").draggable(true);
-        cases.add(case5Options);
-        for (MarkerOptions thisCaseOptions : cases) {
-            myMap.addMarker(thisCaseOptions);
-        }
+        addNewMarker(new LatLng(52.227918, 76.985597));
+        addNewMarker(new LatLng(52.199979, 76.932092));
+        addNewMarker(new LatLng(52.251392, 76.88235));
+        addNewMarker(new LatLng(52.132182, 77.003868));
+        addNewMarker(new LatLng(52.249578, 77.026490));
         findClosestMarker();
-        //findDistanceBetweenTwo(userLocationPoint, new LatLng(52.227918, 76.985597));
-        //drawPolyline();
     }
-    private int findDistanceBetweenTwo(LatLng a, LatLng b) {
-        Location lA = new Location("");
-        lA.setLatitude(a.latitude);
-        lA.setLongitude(a.longitude);
 
-        Location lB = new Location("");
-        lB.setLatitude(b.latitude);
-        lB.setLongitude(b.longitude);
-        int distance = (int) lA.distanceTo(lB);
-        distanceText.setText("Расстояние между вами и ближайшим орман кейсом - "+String.valueOf(distance)+" метров");
-        return distance;
-    }
     private int findClosestMarker() {
-        Location userLocation = new Location("");
-        userLocation.setLatitude(userLocationPoint.latitude);
-        userLocation.setLongitude(userLocationPoint.longitude);
-        Integer[] distances = new Integer[5];
-        Location d1 = new Location("");
-        d1.setLatitude(case1Options.getPosition().latitude);
-        d1.setLongitude(case1Options.getPosition().longitude);
-        distances[0] = (int) userLocation.distanceTo(d1);
-        Location d2 = new Location("");
-        d2.setLatitude(case2Options.getPosition().latitude);
-        d2.setLongitude(case2Options.getPosition().longitude);
-        distances[1] = (int) userLocation.distanceTo(d2);
-        Location d3 = new Location("");
-        d3.setLatitude(case3Options.getPosition().latitude);
-        d3.setLongitude(case3Options.getPosition().longitude);
-        distances[2] = (int) userLocation.distanceTo(d3);
-        Location d4 = new Location("");
-        d4.setLatitude(case4Options.getPosition().latitude);
-        d4.setLongitude(case4Options.getPosition().longitude);
-        distances[3] = (int) userLocation.distanceTo(d4);
-        Location d5 = new Location("");
-        d5.setLatitude(case5Options.getPosition().latitude);
-        d5.setLongitude(case5Options.getPosition().longitude);
-        distances[4] = (int) userLocation.distanceTo(d5);
-        int minimalDinstance = 1000000000;
-        for (int i=0; i<distances.length; i++) {
-            if (minimalDinstance>distances[i]) {
-                minimalDinstance = distances[i];
-                if (distances[i]==(int) userLocation.distanceTo(d1)) {
-                    closestCaseOptions = case1Options;
-                }
-                else if (distances[i]==(int) userLocation.distanceTo(d2)) {
-                    closestCaseOptions = case2Options;
-                }
-                else if (distances[i]==(int) userLocation.distanceTo(d3)) {
-                    closestCaseOptions = case3Options;
-                }
-                else if (distances[i]==(int) userLocation.distanceTo(d4)) {
-                    closestCaseOptions = case4Options;
-                }
-                else if (distances[i]==(int) userLocation.distanceTo(d5)) {
-                    closestCaseOptions = case5Options;
-                }
+        int minimalDistance = 10000000;
+        for (int i = 0; i < markerOptionsList.size(); i++) {
+            Location tmp = new Location("");
+            tmp.setLatitude(markerOptionsList.get(i).getPosition().latitude);
+            tmp.setLongitude(markerOptionsList.get(i).getPosition().longitude);
+            int distanceToThatMarker = (int) userLocation.distanceTo(tmp);
+            if (minimalDistance > distanceToThatMarker) {
+                minimalDistance = distanceToThatMarker;
+                closestCaseOptions = markerOptionsList.get(i);
+                Log.d("aboba", String.valueOf(minimalDistance));
             }
         }
-        distanceText.setText("Расстояние между вами и ближайшим орман кейсом - "+String.valueOf(minimalDinstance)+" метров");
+        distanceText.setText("Расстояние между вами и ближайшим орман кейсом - " + String.valueOf(minimalDistance) + " метров");
+        if (polyLine!=null) {
+            polyLine.remove();
+        }
         drawPolyline();
-        return minimalDinstance;
+        return minimalDistance;
+    }
+    private void addNewMarker(LatLng latLng) {
+        latLngList.add(latLng);
+        MarkerOptions newMarker = new MarkerOptions().position(latLng).title("Орман кейс " + (markerIdx)).draggable(true);
+        markerOptionsList.add(newMarker);
+        myMap.addMarker(newMarker);
+        markerIdx++;
     }
     private void drawPolyline() {
         PolylineOptions polylineOptions = new PolylineOptions()
-                .add(userLocationPoint, closestCaseOptions.getPosition())
+                .add(userLatLng, closestCaseOptions.getPosition())
                 .color(Color.parseColor("#0085FF"))
                 .width(10);
         polyLine = myMap.addPolyline(polylineOptions);

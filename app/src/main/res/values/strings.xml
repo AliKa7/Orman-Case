@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Orman Cases App</string>
+    <string name="app_name">Orman Case</string>
     <string name="my_map_api_key">AIzaSyAu2zrNePdPSuws9sGf5jm_vufhVwNxKTU</string>
+    <string name="call_phone_number">8 705 665 3635</string>
+    <string name="send_message_phone_number">8 705 665 3635</string>
+    <string name="snackbar_text">Сообщение с вашими координатами успешно отправлено!</string>
 </resources>

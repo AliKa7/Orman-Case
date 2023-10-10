@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,7 +19,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OrmanCase4"
+        android:theme="@style/Theme.OrmanCase"
         tools:targetApi="31">
         <activity
             android:name=".SplashScreen"
@@ -33,7 +41,8 @@
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.OrmanCase">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,7 +70,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:parentActivityName=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -70,6 +80,7 @@
         </activity>
         <activity
             android:name=".NavigationActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -78,7 +89,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CaseInstruction"
+            android:name=".AfterFinding"
+            android:parentActivityName=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -86,6 +98,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CallSOS"
+            android:parentActivityName=".HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/my_map_api_key" />

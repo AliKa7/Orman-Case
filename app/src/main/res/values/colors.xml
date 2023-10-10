@@ -2,7 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#F4F4FB</color>
-    <color name="main_blue">#5E69EE</color>
-    <!--<color name="accent color">#00D6C1</color>
-    <color name="secondary color">#F4F7FB</color>!-->
+    <color name="main_color">#1BC073</color>
+    <color name="accent_color">#1BC03F</color>
+    <color name="green_gradient_start_color">#1BC073</color>
+    <color name="green_gradient_end_color">#1BC03F</color>
+    <color name="soft_color">#BEFFE1</color>
+    <color name="main_white">#F4F5FF</color>
+    <color name="blue_second_color">#50adf5</color>
+    <color name="bg_color_deep">#DCF2DC</color>
 </resources>
