@@ -14,9 +14,9 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class HomeActivity extends AppCompatActivity {
     Button toMainActivityButton;
-    Button sostavButton;
     Button toAddnInfoButton;
     ImageButton imageButton;
     Button toCallSOSButton;
@@ -27,7 +27,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
         //toMainActivityButton = findViewById(R.id.toMainActivity);
-        sostavButton = findViewById(R.id.toCaseAppearanceButton);
         imageButton = findViewById(R.id.imageButton);
         ObjectAnimator rotationAnim = ObjectAnimator.ofFloat(imageButton, "rotation", -10f, 10f);
         ObjectAnimator scaleXAnim = ObjectAnimator.ofFloat(imageButton, "scaleX", 0.9f, 1.1f);
@@ -54,16 +53,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, CallSOS.class));
-            }
-        });
-
-
-
-        sostavButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, Sostav.class);
-                startActivity(intent);
             }
         });
         toAddnInfoButton = findViewById(R.id.toAddnInfoButton);

@@ -21,6 +21,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.072" />
 
+    <!--<ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="162dp"
+        android:layout_height="145dp"
+        app:srcCompat="@drawable/box_icon"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="108dp" />!-->
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945">
+        app:layout_constraintVertical_bias="0.893">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/toCallSOSButton"
@@ -42,19 +50,6 @@
             android:backgroundTint="@color/soft_color"
             android:fontFamily="@font/ubuntu_bold"
             android:text="Вызов SOS"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/main_color" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/toCaseAppearanceButton"
-            android:layout_width="260dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/button_corners_10_stl"
-            android:backgroundTint="@color/soft_color"
-            android:fontFamily="@font/ubuntu_bold"
-            android:text="Состав ящика"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/main_color" />
 
@@ -72,14 +67,6 @@
             android:textColor="@color/main_color"
             android:visibility="visible" />
     </LinearLayout>
-
-    <!--<ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="162dp"
-        android:layout_height="145dp"
-        app:srcCompat="@drawable/box_icon"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="108dp" />!-->
 
     <ImageButton
         android:id="@+id/imageButton"
