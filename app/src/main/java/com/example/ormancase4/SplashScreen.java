@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 
 public class SplashScreen extends AppCompatActivity {
     ImageView logoImage;
@@ -19,8 +18,8 @@ public class SplashScreen extends AppCompatActivity {
         welcomeText = findViewById(R.id.welcome);
         logoImage.setAlpha(0.1f);
         welcomeText.setAlpha(0.1f);
-        logoImage.animate().alpha(1f).setDuration(300);
-        welcomeText.animate().alpha(1f).setDuration(300);
+        logoImage.animate().alpha(1f).setDuration(1000);
+        welcomeText.animate().alpha(1f).setDuration(1000);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -28,6 +27,6 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 400);
+        }, 1200);
     }
 }

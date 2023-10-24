@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "435495450559",
+    "project_id": "ormancase4",
+    "storage_bucket": "ormancase4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435495450559:android:f4668a2dd26773fb09d30a",
+        "android_client_info": {
+          "package_name": "com.example.ormancase4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_PVBGnUz7t1zvOUc8_we0fecYULnLZJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

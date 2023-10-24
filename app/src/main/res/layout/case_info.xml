@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4FB">
+
+    <!--<ImageView
+        android:id="@+id/imageView"
+        android:layout_width="357dp"
+        android:layout_height="449dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/instruction1" />!-->
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="335dp"
+        android:layout_height="69dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Что внутри ящика?"
+        android:textAlignment="center"
+        android:textColor="@color/main_color"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="372dp"
+        android:layout_height="424dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/samospButton"
+        android:layout_width="345dp"
+        android:layout_height="52dp"
+        android:background="@drawable/button_corners_10_stl"
+        android:backgroundTint="@color/blue_second_color2"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Как надевать самоспасатель?"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/main_white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.777" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/marlyaImageButton"
+        android:layout_width="345dp"
+        android:layout_height="52dp"
+        android:background="@drawable/button_corners_10_stl"
+        android:backgroundTint="@color/blue_second_color2"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Узнать о марлевой повязке (Фото)"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/main_white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/marlyaVideoButton"
+        android:layout_width="345dp"
+        android:layout_height="52dp"
+        android:background="@drawable/button_corners_10_stl"
+        android:backgroundTint="@color/blue_second_color2"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Узнать о марлевой повязке (Видео)"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/main_white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,9 +4,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
@@ -20,6 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     Button toAddnInfoButton;
     ImageButton imageButton;
     Button toCallSOSButton;
+    Button toCaseButton;
     Boolean tmp = true;
     AnimatorSet animatorSet;
 
@@ -56,13 +54,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         toAddnInfoButton = findViewById(R.id.toAddnInfoButton);
-        /*toMainActivityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });*/
         toAddnInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +61,12 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        toCaseButton = findViewById(R.id.toCaseButton);
+        toCaseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, CaseInfo.class));
+            }
+        });
     }
 }

@@ -4,4 +4,31 @@
     <string name="call_phone_number">8 705 665 3635</string>
     <string name="send_message_phone_number">8 705 665 3635</string>
     <string name="snackbar_text">Сообщение с вашими координатами успешно отправлено!</string>
+
+    <string name="item1name">Изолирующий самоспасатель</string>
+    <string name="item1desc">Необходим для защиты дыхательных путей. Кислорода, подаваемого самоспасателем, хватает на 20 минут.</string>
+    <string name="item2name">Кислородный баллон</string>
+    <string name="item2desc">Воспользуйтесь при нехватке кислорода, используя медицинскую трубку.</string>
+    <string name="item3name">Анальгин</string>
+    <string name="item3desc">Это обезболивающие таблетки. При принятии анальгина, запивайте водой. Дозировка - 0.5 или 1 таблетка.
+Анальгин противопоказан при беременности и болезнях печени, а также детям меньше 15 лет</string>
+    <string name="item4name">Марлевые бинты</string>
+    <string name="item4desc">Необходимы для фиксации повязок, остановки кровотечения. Хорошо впитывают влагу.</string>
+    <string name="item5name">Перекись водорода</string>
+    <string name="item5desc">Используйте для обработки ран, дабы не занести заражение.</string>
+    <string name="item6name">Бутылки воды</string>
+    <string name="item6desc">Если невозможно воспользоваться самоспасателем, смочите марлевые
+        бинты водой и прижмите ко рту и носу. При термических ожогах,
+        поднесите пострадавшую область под струю воды и обмотайте бинтами.</string>
+    <string name="item7name">Ножницы</string>
+    <string name="item7desc">Используйте ножницы для разрезания бинтов в случае необходимости</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

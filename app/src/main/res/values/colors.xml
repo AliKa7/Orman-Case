@@ -9,5 +9,6 @@
     <color name="soft_color">#BEFFE1</color>
     <color name="main_white">#F4F5FF</color>
     <color name="blue_second_color">#50adf5</color>
+    <color name="blue_second_color2">#2597EF</color>
     <color name="bg_color_deep">#DCF2DC</color>
 </resources>

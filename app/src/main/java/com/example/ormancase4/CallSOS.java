@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,12 +25,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class CallSOS extends AppCompatActivity {
-    FloatingActionButton fab;
     ImageView imageView;
     Button sendSMSButton;
     int PERMISSION_CODE = 100;
     AnimatorSet animatorSet;
     boolean smsSended = false;
+    RadioButton rbFireman;
+    RadioButton rbForester;
+    TextView phoneNumberLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +41,21 @@ public class CallSOS extends AppCompatActivity {
         getSupportActionBar().setTitle("Вызов SOS");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.white_back_arrow);
-        fab = findViewById(R.id.floatingActionButton);
+        phoneNumberLabel = findViewById(R.id.phoneNumberLabel);
+        rbFireman = findViewById(R.id.radioButtonFireman);
+        rbForester = findViewById(R.id.radioButtonForester);
+        rbFireman.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                phoneNumberLabel.setText("8 (754) 421-78-88");
+            }
+        });
+        rbForester.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                phoneNumberLabel.setText("8 (129) 758-55-44");
+            }
+        });
         imageView = findViewById(R.id.phoneImageView);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,15 +94,6 @@ public class CallSOS extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(CallSOS.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(CallSOS.this, new String[]{Manifest.permission.SEND_SMS}, PERMISSION_CODE);
         }
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String phoneNumber = getResources().getString(R.string.call_phone_number);
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel: " + phoneNumber));
-                startActivity(intent);
-            }
-        });
     }
 
     private void infiniteAnimation() {

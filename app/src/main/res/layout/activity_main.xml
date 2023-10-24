@@ -7,6 +7,7 @@
     android:background="@color/main_white"
     tools:context=".MainActivity">
 
+
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -21,44 +22,59 @@
 
     <TextView
         android:id="@+id/distanceText"
-        android:layout_width="384dp"
-        android:layout_height="94dp"
-        android:fontFamily="@font/montserrat_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold"
         android:gravity="center"
-        android:text="TextView"
+        android:text="3455 метров"
+        android:textAllCaps="false"
+        android:textColor="@color/main_color"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78" />
+
+    <TextView
+        android:id="@+id/distanceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center"
+        android:text="Расстояние от вас до ближайшего ящика"
         android:textColor="@color/main_color"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/map"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.409" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goToNavigation"
         android:layout_width="160dp"
-        android:layout_height="80dp"
+        android:layout_height="61dp"
         android:background="@drawable/button_corners_30_stl"
-        android:backgroundTint="@color/main_color"
+        android:backgroundTint="#CCF4E2"
         android:fontFamily="@font/ubuntu_bold"
         android:text="Навигация"
         android:textAppearance="@color/design_default_color_background"
-        android:textColor="#F4F4FB"
+        android:textColor="@color/main_color"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/map"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.474" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/caseFinded"
-        android:layout_width="186dp"
-        android:layout_height="80dp"
+        android:layout_width="181dp"
+        android:layout_height="61dp"
         android:background="@drawable/button_corners_30_stl"
-        android:backgroundTint="@color/accent_color"
+        android:backgroundTint="@color/main_color"
         android:fontFamily="@font/ubuntu_bold"
         android:text="Я нашел ящик"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -66,9 +82,9 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/map"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.474" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
