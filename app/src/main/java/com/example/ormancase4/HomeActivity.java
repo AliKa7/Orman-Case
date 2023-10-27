@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                startActivity(new Intent(HomeActivity.this, DudeMainActivity.class));
             }
         });
         toCallSOSButton = findViewById(R.id.toCallSOSButton);

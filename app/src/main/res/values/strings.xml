@@ -6,22 +6,25 @@
     <string name="snackbar_text">Сообщение с вашими координатами успешно отправлено!</string>
 
     <string name="item1name">Изолирующий самоспасатель</string>
-    <string name="item1desc">Необходим для защиты дыхательных путей. Кислорода, подаваемого самоспасателем, хватает на 20 минут.</string>
-    <string name="item2name">Кислородный баллон</string>
-    <string name="item2desc">Воспользуйтесь при нехватке кислорода, используя медицинскую трубку.</string>
-    <string name="item3name">Анальгин</string>
-    <string name="item3desc">Это обезболивающие таблетки. При принятии анальгина, запивайте водой. Дозировка - 0.5 или 1 таблетка.
-Анальгин противопоказан при беременности и болезнях печени, а также детям меньше 15 лет</string>
+    <string name="item1desc">Критически необходим для защиты дыхательных путей. Наденьте его на голову и выпустите клапон. Будет работать 20 минут в случае ходьбы и 6-8 минут в случае бега.</string>
+    <string name="item2name">Две бутылки воды</string>
+    <string name="item2desc">Выпейте воды, чтобы снизить риск обезвоживания. Также можно охладить ожоги, промывать глаза от пыли и дыма</string>
+    <string name="item3name">Ацетилсалициловая кислота</string>
+    <string name="item3desc">Если вы старше 16 лет, приняйте 1 таблетку для снижения температуры при тепловом ударе или облегчения болевых симптомов.</string>
     <string name="item4name">Марлевые бинты</string>
     <string name="item4desc">Необходимы для фиксации повязок, остановки кровотечения. Хорошо впитывают влагу.</string>
-    <string name="item5name">Перекись водорода</string>
-    <string name="item5desc">Используйте для обработки ран, дабы не занести заражение.</string>
-    <string name="item6name">Бутылки воды</string>
-    <string name="item6desc">Если невозможно воспользоваться самоспасателем, смочите марлевые
-        бинты водой и прижмите ко рту и носу. При термических ожогах,
-        поднесите пострадавшую область под струю воды и обмотайте бинтами.</string>
-    <string name="item7name">Ножницы</string>
-    <string name="item7desc">Используйте ножницы для разрезания бинтов в случае необходимости</string>
+    <string name="item5name">Нитроглицерин</string>
+    <string name="item5desc">Используйте для снятия симптомов сердечно-сосудистых заболеваний. Принимайте по одной таблетке под язык.</string>
+    <string name="item6name">Бриллиантовый зеленый</string>
+    <string name="item6desc">Антисептик, наносите на раны для предотвращения инфекций.</string>
+    <string name="item7name">Жгут</string>
+    <string name="item7desc">Если у вас сильное кровотечение, жестко зафикситруйте жгут выше места травмы.</string>
+    <string name="item8name">Перекись водорода</string>
+    <string name="item8desc">Используйте для обработки ран и термических ожогов.</string>
+    <string name="item9name">Лейкопластырь бакцерицидный</string>
+    <string name="item9desc">Нанесите на раны, чтобы защититься от инфекций.</string>
+    <string name="item10name">Уголь активированный</string>
+    <string name="item10desc">Примите внутрь и запйте водой при отравлении уграным газом или другими токсичными веществами</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

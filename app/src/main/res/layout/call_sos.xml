@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="314dp"
-        android:layout_height="89dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu_medium"
         android:text="Нажмите на телефон ниже, чтобы позвонить пожарной охране/лесничеству"
         android:textAlignment="center"
@@ -31,16 +31,18 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.066" />
 
     <ImageView
         android:id="@+id/phoneImageView"
         android:layout_width="272dp"
         android:layout_height="235dp"
-        android:layout_marginTop="336dp"
+        android:layout_marginTop="324dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/phone_image" />
@@ -49,6 +51,7 @@
         android:id="@+id/phoneNumberLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_medium"
         android:text="8 (129) 758-55-44"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

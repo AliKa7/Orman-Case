@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,15 +21,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrmanCase"
         tools:targetApi="31">
-        <activity
-            android:name=".ChooseRoleActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".SplashScreen"
             android:exported="true">
@@ -62,7 +52,7 @@
         <activity
             android:name=".AdditionalInfo"
             android:exported="true"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".DudeMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -70,7 +60,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".DudeMainActivity"
             android:exported="true"
             android:parentActivityName=".HomeActivity">
             <intent-filter>
@@ -82,7 +72,7 @@
         <activity
             android:name=".NavigationActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".DudeMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -92,7 +82,7 @@
         <activity
             android:name=".CaseInfo"
             android:exported="true"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".DudeMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -112,7 +102,7 @@
         <activity
             android:name=".AfterFinding"
             android:exported="true"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".DudeMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

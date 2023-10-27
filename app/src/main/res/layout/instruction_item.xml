@@ -13,7 +13,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp">
+        android:layout_height="400dp">
 
         <TextView
             android:id="@+id/adviceNumber"
@@ -48,12 +48,12 @@
         <TextView
             android:id="@+id/adviceDescription"
             android:layout_width="238dp"
-            android:layout_height="72dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/ubuntu_medium"
             android:gravity="center"
             android:paddingHorizontal="15dp"
-            android:text="Это обезболивающие таблетки. При принятии анальгина, запивайте водой. Дозировка - 0.5 или 1 таблетка."
+            android:text="Откройте ящик и доставайте оттуда нужные вам вещи. Внутри есть информационная брошюра, на коробке самоспасателя находится инструкция."
             android:textColor="@color/main_color"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
