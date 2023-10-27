@@ -25,6 +25,14 @@
     <string name="item9desc">Нанесите на раны, чтобы защититься от инфекций.</string>
     <string name="item10name">Уголь активированный</string>
     <string name="item10desc">Примите внутрь и запйте водой при отравлении уграным газом или другими токсичными веществами</string>
+    <string name="item11name">Аммиак</string>
+    <string name="item11desc">Приподнесите к лицу, если чувствуете, что теряете сознание из-за недостатка кислорода</string>
+    <string name="item12name">Корвалол</string>
+    <string name="item12desc">Примите для снятия стресса, не больше 15-20 капель с водой за раз</string>
+    <string name="item13name">Валидол</string>
+    <string name="item13desc">Разместите под языком и рассасывайте для облегчения боли, связанной с сердечно-сосудистой системой или пищеварительным трактом.</string>
+    <string name="item14name">Вата</string>
+    <string name="item14desc">Можно использовать для дополнительной обработки ран</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

@@ -78,6 +78,11 @@ public class CaseInfo extends AppCompatActivity {
         caseItemsList.add(new CaseItem(R.drawable.peroxide, getResources().getString(R.string.item8name), getResources().getString(R.string.item8desc)));
         caseItemsList.add(new CaseItem(R.drawable.plaster, getResources().getString(R.string.item9name), getResources().getString(R.string.item9desc)));
         caseItemsList.add(new CaseItem(R.drawable.coal, getResources().getString(R.string.item10name), getResources().getString(R.string.item10desc)));
+        caseItemsList.add(new CaseItem(R.drawable.ammiak, getResources().getString(R.string.item11name), getResources().getString(R.string.item11desc)));
+        caseItemsList.add(new CaseItem(R.drawable.corvalol, getResources().getString(R.string.item12name), getResources().getString(R.string.item12desc)));
+        caseItemsList.add(new CaseItem(R.drawable.validol, getResources().getString(R.string.item13name), getResources().getString(R.string.item13desc)));
+        caseItemsList.add(new CaseItem(R.drawable.vata, getResources().getString(R.string.item14name), getResources().getString(R.string.item14desc)));
+
         adapter = new CaseItemAdapter(caseItemsList);
         recyclerView.setAdapter(adapter);
     }

@@ -4,6 +4,7 @@
     android:padding="16dp"
     android:ellipsize="end"
     android:maxLines="1"
+    android:fontFamily="@font/ubuntu"
     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
     android:layout_height="match_parent">
 
