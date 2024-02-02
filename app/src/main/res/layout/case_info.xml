@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <TextView
         android:id="@+id/adviceLabel"
@@ -45,7 +45,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.743" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -53,14 +53,35 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233" />
+        app:layout_constraintVertical_bias="0.175" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/samospButton"
-        android:layout_width="345dp"
-        android:layout_height="52dp"
+        android:id="@+id/button_about"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_corners_10_stl"
+        android:backgroundTint="@color/blue_second_color2"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Информация о самоспасателе"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/main_white"
+        android:textSize="15sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.854" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_inst"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/button_corners_10_stl"
         android:backgroundTint="@color/blue_second_color2"
         android:fontFamily="@font/ubuntu_medium"
@@ -69,51 +90,13 @@
         android:textAllCaps="false"
         android:textColor="@color/main_white"
         android:textSize="15sp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.777" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/marlyaImageButton"
-        android:layout_width="345dp"
-        android:layout_height="52dp"
-        android:background="@drawable/button_corners_10_stl"
-        android:backgroundTint="@color/blue_second_color2"
-        android:fontFamily="@font/ubuntu_medium"
-        android:text="Узнать о марлевой повязке (Фото)"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/main_white"
-        android:textSize="15sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/marlyaVideoButton"
-        android:layout_width="345dp"
-        android:layout_height="52dp"
-        android:background="@drawable/button_corners_10_stl"
-        android:backgroundTint="@color/blue_second_color2"
-        android:fontFamily="@font/ubuntu_medium"
-        android:text="Узнать о марлевой повязке (Видео)"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/main_white"
-        android:textSize="15sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874" />
+        app:layout_constraintVertical_bias="0.948" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -125,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728">
+        app:layout_constraintVertical_bias="0.64">
 
 
         <AutoCompleteTextView
@@ -139,6 +122,29 @@
             app:layout_constraintVertical_bias="0.875"
             tools:layout_editor_absoluteX="-16dp" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <VideoView
+        android:id="@+id/videoView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+    <VideoView
+        android:id="@+id/videoView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

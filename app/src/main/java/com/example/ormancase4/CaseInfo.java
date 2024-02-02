@@ -1,10 +1,16 @@
 package com.example.ormancase4;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +22,8 @@ public class CaseInfo extends AppCompatActivity {
     List<CaseItem> caseItemsList = new ArrayList<>();
     CaseItemAdapter adapter;
     String[] symptoms;
+    Button buttonAbout;
+    Button buttonInst;
     ArrayAdapter<String> symptomAdapter;
     AutoCompleteTextView autoCompleteTextView;
     TextView adviceLabel;
@@ -28,6 +36,51 @@ public class CaseInfo extends AppCompatActivity {
         getSupportActionBar().setTitle("Состав ящика");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.white_back_arrow);
+        buttonAbout = findViewById(R.id.button_about);
+        buttonInst = findViewById(R.id.button_inst);
+        String path1 = "android.resource://" + getPackageName() + "/" + R.raw.video_about;
+        String path2 = "android.resource://" + getPackageName() + "/" + R.raw.video_instruction;
+        VideoView videoView1 = findViewById(R.id.videoView1);
+        videoView1.setVideoPath(path1);
+        MediaController mediaController1 = new MediaController(this);
+        mediaController1.setAnchorView(videoView1);
+        videoView1.setMediaController(mediaController1);
+        VideoView videoView2 = findViewById(R.id.videoView2);
+        videoView2.setVideoPath(path2);
+        MediaController mediaController2 = new MediaController(this);
+        mediaController2.setAnchorView(videoView2);
+        videoView2.setMediaController(mediaController2);
+        buttonAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (videoView1.isPlaying()) {
+                    buttonAbout.setText("Информация о самоспасателе");
+                    videoView1.stopPlayback();
+                    videoView1.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    buttonAbout.setText("Выключить видео");
+                    videoView1.setVisibility(View.VISIBLE);
+                    videoView1.start();
+                }
+
+            }
+        });
+        buttonInst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (videoView2.isPlaying()) {
+                    buttonInst.setText("Как надевать самоспасатель?");
+                    videoView2.stopPlayback();
+                    videoView2.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    buttonInst.setText("Выключить видео");
+                    videoView2.setVisibility(View.VISIBLE);
+                    videoView2.start();
+                }
+            }
+        });
         adviceLabel = findViewById(R.id.adviceLabel);
         symptoms = new String[]{"Сильное кровотечение",
                 "Термический ожог", "Отравление угарным газом", "Дезинфицировать рану",

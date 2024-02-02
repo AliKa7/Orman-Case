@@ -25,7 +25,9 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.OnMapsSdkInitializedCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -99,7 +101,9 @@ public class DudeMainActivity extends AppCompatActivity implements OnMapReadyCal
             @Override
             public void onSuccess(Location location) {
                 if (location != null) {
-                    userLocation = location;
+                    userLocation = new Location("");
+                    userLocation.setLatitude(51.930398);
+                    userLocation.setLongitude(79.073695);
                     mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
                     mapFragment.getMapAsync(DudeMainActivity.this);
                 }
@@ -196,7 +200,7 @@ public class DudeMainActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     public void userMarkerInit() {
-        userLatLng = new LatLng(userLocation.getLatitude(), userLocation.getLongitude());
+        userLatLng = new LatLng(51.930398, 79.073695);
         userMarkerOptions = new MarkerOptions().position(userLatLng).title("Ваше местоположение");
         Drawable drawable = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.baseline_emoji_people_45);
         BitmapDescriptor icon = BitmapDescriptorFactory.fromBitmap(MapWorker.DrawableToBitmap(drawable));
@@ -214,6 +218,7 @@ public class DudeMainActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     public void setMarkerData(MarkerOptions markerOptions, DataSnapshot snapshot, boolean isDraggable) {
+        //there is error!
         String location = snapshot.child("Location").getValue(String.class);
         String fullness = snapshot.child("Fullness").getValue(String.class);
         String title = "Орман кейс " + snapshot.child("Number").getValue(Integer.class).toString() + " - " + fullness;
@@ -238,8 +243,14 @@ public class DudeMainActivity extends AppCompatActivity implements OnMapReadyCal
                 break;
         }
     }
-    ///////////////////////////////////////////////////////////////
-   /*@Override
+}
+
+/*
+^
+|
+|
+|
+@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         for (int i = 0; i < menu.size(); i++) {
@@ -282,4 +293,3 @@ public class DudeMainActivity extends AppCompatActivity implements OnMapReadyCal
         }
         return true;
     }*/
-}
