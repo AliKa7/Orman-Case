@@ -43,7 +43,7 @@
         <activity
             android:name=".AdditionalInfo"
             android:exported="true"
-            android:parentActivityName=".DudeMainActivity">
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DudeMainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:parentActivityName=".HomeActivity">
             <intent-filter>
@@ -63,7 +63,7 @@
         <activity
             android:name=".NavigationActivity"
             android:exported="true"
-            android:parentActivityName=".DudeMainActivity">
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -73,7 +73,7 @@
         <activity
             android:name=".CaseInfo"
             android:exported="true"
-            android:parentActivityName=".DudeMainActivity">
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -93,7 +93,7 @@
         <activity
             android:name=".AfterFinding"
             android:exported="true"
-            android:parentActivityName=".DudeMainActivity">
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

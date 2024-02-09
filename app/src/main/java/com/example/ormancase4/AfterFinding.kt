@@ -12,14 +12,14 @@ import com.google.firebase.database.FirebaseDatabase
 
 
 class AfterFinding : AppCompatActivity() {
-    lateinit var button: Button
-    lateinit var caseNumberET: EditText
-    lateinit var dbRef: DatabaseReference
-    lateinit var checkBox1: CheckBox
-    lateinit var checkBox2: CheckBox
-    lateinit var checkBox3: CheckBox
-    lateinit var checkBox4: CheckBox
-    lateinit var checkBoxes: MutableList<CheckBox>
+    private lateinit var button: Button
+    private lateinit var caseNumberET: EditText
+    private lateinit var dbRef: DatabaseReference
+    private lateinit var checkBox1: CheckBox
+    private lateinit var checkBox2: CheckBox
+    private lateinit var checkBox3: CheckBox
+    private lateinit var checkBox4: CheckBox
+    private lateinit var checkBoxes: MutableList<CheckBox>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.after_finding)
@@ -41,20 +41,26 @@ class AfterFinding : AppCompatActivity() {
         button.setOnClickListener(View.OnClickListener { v ->
             val s = caseNumberET.getText().toString().trim { it <= ' ' }
             val caseKey = "Case $s"
-            val caseRef = dbRef!!.child(caseKey)
+            val caseRef = dbRef.child(caseKey)
             var checkedCount = 0
             for (checkBox in checkBoxes) {
-                if (checkBox!!.isChecked) {
+                if (checkBox.isChecked) {
                     checkedCount++
                 }
             }
-            if (checkedCount == 0) {
-                Snackbar.make(v, "Вы не заполнили все данные!", Snackbar.LENGTH_LONG).show()
-                return@OnClickListener
-            } else if (checkedCount == 4) {
-                caseRef.child("Fullness").setValue("Пустой")
-            } else if (checkedCount == 1 || checkedCount == 2 || checkedCount == 3) {
-                caseRef.child("Fullness").setValue("Частично заполнен")
+            when (checkedCount) {
+                0 -> {
+                    Snackbar.make(v, "Вы не заполнили все данные!", Snackbar.LENGTH_LONG).show()
+                    return@OnClickListener
+                }
+
+                1, 2, 3 -> {
+                    caseRef.child("Fullness").setValue("Частично заполнен")
+                }
+
+                4 -> {
+                    caseRef.child("Fullness").setValue("Пустой")
+                }
             }
             Snackbar.make(v, "Данные отправлены! Спасибо за обратную связь!", Snackbar.LENGTH_SHORT)
                 .show()

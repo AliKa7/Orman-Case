@@ -1,5 +1,6 @@
 package com.example.ormancase4
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -24,6 +25,8 @@ class MapWorker {
                 .color(Color.parseColor("#0085FF"))
                 .width(10f)
         }
+
+        @SuppressLint("SetTextI18n")
         @JvmStatic
         fun getClosestMarker(
             markerOptionsList: ArrayList<MarkerOptions>,
@@ -42,9 +45,10 @@ class MapWorker {
                     closestCaseOptions = markerOptionsList[i]
                 }
             }
-            distanceText.text = minimalDistance.toString() + " метров"
+            distanceText.text = "$minimalDistance метров"
             return closestCaseOptions
         }
+
         @JvmStatic
         fun convertLocationStringToLatLng(locationString: String): LatLng? {
             val coordinates = locationString.split(",".toRegex()).dropLastWhile { it.isEmpty() }
@@ -60,6 +64,7 @@ class MapWorker {
             }
             return null
         }
+
         @JvmStatic
         fun toBitmapFromDrawable(drawable: Drawable): Bitmap {
             if (drawable is BitmapDrawable) {

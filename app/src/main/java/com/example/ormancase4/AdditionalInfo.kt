@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class AdditionalInfo : AppCompatActivity() {
-    lateinit var recyclerView: RecyclerView
-    lateinit var adapter: InstructionItemAdapter
-    var instructionItemList: MutableList<InstructionItem> = ArrayList()
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: InstructionItemAdapter
+    private var instructionItemList: MutableList<InstructionItem> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.additional_info)
@@ -50,8 +50,8 @@ class AdditionalInfo : AppCompatActivity() {
             )
         )
         adapter = InstructionItemAdapter(instructionItemList)
-        recyclerView!!.adapter = adapter
-        recyclerView!!.layoutManager =
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
     }
 }

@@ -7,12 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-public class CaseItemAdapter(private val caseItemsList : List<CaseItem>) :
+class CaseItemAdapter(private val caseItemsList: List<CaseItem>) :
     RecyclerView.Adapter<CaseItemAdapter.CaseItemViewHolder>() {
     class CaseItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val itemImage : ImageView = itemView.findViewById(R.id.itemImage)
-        val itemName : TextView = itemView.findViewById(R.id.itemText)
-        val itemDescription : TextView = itemView.findViewById(R.id.itemDescription)
+        val itemImage: ImageView = itemView.findViewById(R.id.itemImage)
+        val itemName: TextView = itemView.findViewById(R.id.itemText)
+        val itemDescription: TextView = itemView.findViewById(R.id.itemDescription)
 
     }
 

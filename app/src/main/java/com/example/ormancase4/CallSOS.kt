@@ -18,7 +18,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 
-public class CallSOS : AppCompatActivity() {
+class CallSOS : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var sendSMSButton: Button
     private lateinit var rbFireman: RadioButton
@@ -30,7 +30,7 @@ public class CallSOS : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.call_sos)
-        supportActionBar?.setTitle("");
+        supportActionBar?.title = ""
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.white_back_arrow)
         phoneNumberLabel = findViewById(R.id.phoneNumberLabel)
@@ -72,7 +72,7 @@ public class CallSOS : AppCompatActivity() {
         ) {
             ActivityCompat.requestPermissions(
                 this@CallSOS,
-                arrayOf<String>(Manifest.permission.CALL_PHONE),
+                arrayOf(Manifest.permission.CALL_PHONE),
                 PERMISSION_CODE
             )
         }
@@ -83,11 +83,12 @@ public class CallSOS : AppCompatActivity() {
         ) {
             ActivityCompat.requestPermissions(
                 this@CallSOS,
-                arrayOf<String>(Manifest.permission.SEND_SMS),
+                arrayOf(Manifest.permission.SEND_SMS),
                 PERMISSION_CODE
             )
         }
     }
+
     private fun infiniteAnimation() {
         val rotationAnim = ObjectAnimator.ofFloat(imageView, "rotation", -10f, 10f)
         val scaleXAnim = ObjectAnimator.ofFloat(imageView, "scaleX", 0.9f, 1.1f)
@@ -105,8 +106,8 @@ public class CallSOS : AppCompatActivity() {
         animatorSet.start()
     }
 
-    fun checkPermission(permission: String?): Boolean {
-        val check = ContextCompat.checkSelfPermission(this, permission!!)
+    private fun checkPermission(permission: String): Boolean {
+        val check = ContextCompat.checkSelfPermission(this, permission)
         return check == PackageManager.PERMISSION_GRANTED
     }
 }

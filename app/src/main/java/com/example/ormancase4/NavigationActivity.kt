@@ -15,6 +15,6 @@ class NavigationActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.white_back_arrow)
         button = findViewById(R.id.goBackToMainActivity)
-        button.setOnClickListener(View.OnClickListener { finish() })
+        button.setOnClickListener { finish() }
     }
 }

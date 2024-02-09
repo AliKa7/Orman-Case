@@ -1,5 +1,6 @@
 package com.example.ormancase4
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
     lateinit var logoImage: ImageView
     lateinit var welcomeText: TextView
@@ -16,8 +18,8 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.splash_screen)
         logoImage = findViewById(R.id.logoImage)
         welcomeText = findViewById(R.id.welcome)
-        logoImage.setAlpha(0.1f)
-        welcomeText.setAlpha(0.1f)
+        logoImage.alpha = 0.1f
+        welcomeText.alpha = 0.1f
         logoImage.animate().alpha(1f).setDuration(1000)
         welcomeText.animate().alpha(1f).setDuration(1000)
         Handler().postDelayed({

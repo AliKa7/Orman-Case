@@ -2,7 +2,6 @@ package com.example.ormancase4
 
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
@@ -15,15 +14,15 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class CaseInfo : AppCompatActivity() {
-    lateinit var recyclerView: RecyclerView
-    var caseItemsList: MutableList<CaseItem> = ArrayList()
-    lateinit var adapter: CaseItemAdapter
-    lateinit var symptoms: Array<String>
-    lateinit var buttonAbout: Button
-    lateinit var buttonInst: Button
-    lateinit var symptomAdapter: ArrayAdapter<String>
-    lateinit var autoCompleteTextView: AutoCompleteTextView
-    lateinit var adviceLabel: TextView
+    private lateinit var recyclerView: RecyclerView
+    private var caseItemsList: MutableList<CaseItem> = ArrayList()
+    private lateinit var adapter: CaseItemAdapter
+    private lateinit var symptoms: Array<String>
+    private lateinit var buttonAbout: Button
+    private lateinit var buttonInst: Button
+    private lateinit var symptomAdapter: ArrayAdapter<String>
+    private lateinit var autoCompleteTextView: AutoCompleteTextView
+    private lateinit var adviceLabel: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.case_info)
@@ -46,28 +45,28 @@ class CaseInfo : AppCompatActivity() {
         val mediaController2 = MediaController(this)
         mediaController2.setAnchorView(videoView2)
         videoView2.setMediaController(mediaController2)
-        buttonAbout.setOnClickListener(View.OnClickListener {
+        buttonAbout.setOnClickListener {
             if (videoView1.isPlaying) {
-                buttonAbout.setText("Информация о самоспасателе")
+                buttonAbout.text = "Информация о самоспасателе"
                 videoView1.stopPlayback()
                 videoView1.visibility = View.INVISIBLE
             } else {
-                buttonAbout.setText("Выключить видео")
+                buttonAbout.text = "Выключить видео"
                 videoView1.visibility = View.VISIBLE
                 videoView1.start()
             }
-        })
-        buttonInst.setOnClickListener(View.OnClickListener {
+        }
+        buttonInst.setOnClickListener {
             if (videoView2.isPlaying) {
-                buttonInst.setText("Как надевать самоспасатель?")
+                buttonInst.text = "Как надевать самоспасатель?"
                 videoView2.stopPlayback()
                 videoView2.visibility = View.INVISIBLE
             } else {
-                buttonInst.setText("Выключить видео")
+                buttonInst.text = "Выключить видео"
                 videoView2.visibility = View.VISIBLE
                 videoView2.start()
             }
-        })
+        }
         adviceLabel = findViewById(R.id.adviceLabel)
         symptoms = arrayOf(
             "Сильное кровотечение",
@@ -77,10 +76,10 @@ class CaseInfo : AppCompatActivity() {
         autoCompleteTextView = findViewById(R.id.autoCompleteText)
         symptomAdapter = ArrayAdapter(this, R.layout.symptom_item, symptoms)
         autoCompleteTextView.setAdapter(symptomAdapter)
-        autoCompleteTextView.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
+        autoCompleteTextView.setOnItemClickListener { parent, _, position, _ ->
             val item = parent.getItemAtPosition(position).toString()
             var advice = ""
-            val layoutManager = recyclerView.getLayoutManager()
+            val layoutManager = recyclerView.layoutManager
             when (item) {
                 "Сильное кровотечение" -> {
                     layoutManager!!.smoothScrollToPosition(recyclerView, RecyclerView.State(), 6)
@@ -112,13 +111,13 @@ class CaseInfo : AppCompatActivity() {
                     advice = "Используйте нитроглицерин"
                 }
             }
-            adviceLabel.setText(advice)
-        })
+            adviceLabel.text = advice
+        }
     }
 
     private fun init() {
-        recyclerView!!.setHasFixedSize(true)
-        recyclerView!!.layoutManager =
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         caseItemsList.add(
             CaseItem(
@@ -219,7 +218,7 @@ class CaseInfo : AppCompatActivity() {
             )
         )
         adapter = CaseItemAdapter(caseItemsList)
-        recyclerView!!.adapter = adapter
+        recyclerView.adapter = adapter
     }
 }
 

@@ -4,7 +4,6 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.view.animation.LinearInterpolator
 import android.widget.Button
 import android.widget.ImageButton
@@ -12,13 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class HomeActivity : AppCompatActivity() {
-    lateinit var toMainActivityButton: Button
-    lateinit var toAddnInfoButton: Button
-    lateinit var imageButton: ImageButton
-    lateinit var toCallSOSButton: Button
-    lateinit var toCaseButton: Button
-    var tmp = true
-    lateinit var animatorSet: AnimatorSet
+    private lateinit var toAdditionInfoButton: Button
+    private lateinit var imageButton: ImageButton
+    private lateinit var toCallSOSButton: Button
+    private lateinit var toCaseButton: Button
+    private lateinit var animatorSet: AnimatorSet
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home)
@@ -34,41 +31,41 @@ class HomeActivity : AppCompatActivity() {
         scaleYAnim.repeatCount = ObjectAnimator.INFINITE
         scaleYAnim.repeatMode = ObjectAnimator.REVERSE
         animatorSet = AnimatorSet()
-        animatorSet!!.playTogether(rotationAnim, scaleXAnim, scaleYAnim)
-        animatorSet!!.setDuration(2000)
-        animatorSet!!.interpolator = LinearInterpolator()
-        animatorSet!!.start()
-        imageButton.setOnClickListener(View.OnClickListener {
+        animatorSet.playTogether(rotationAnim, scaleXAnim, scaleYAnim)
+        animatorSet.setDuration(2000)
+        animatorSet.interpolator = LinearInterpolator()
+        animatorSet.start()
+        imageButton.setOnClickListener {
             startActivity(
                 Intent(
                     this@HomeActivity,
-                    DudeMainActivity::class.java
+                    MainActivity::class.java
                 )
             )
-        })
+        }
         toCallSOSButton = findViewById(R.id.toCallSOSButton)
-        toCallSOSButton.setOnClickListener(View.OnClickListener {
+        toCallSOSButton.setOnClickListener {
             startActivity(
                 Intent(
                     this@HomeActivity,
                     CallSOS::class.java
                 )
             )
-        })
-        toAddnInfoButton = findViewById(R.id.toAddnInfoButton)
-        toAddnInfoButton.setOnClickListener(View.OnClickListener {
+        }
+        toAdditionInfoButton = findViewById(R.id.toAddnInfoButton)
+        toAdditionInfoButton.setOnClickListener {
             val intent = Intent(this@HomeActivity, AdditionalInfo::class.java)
             startActivity(intent)
-        })
+        }
         toCaseButton = findViewById(R.id.toCaseButton)
-        toCaseButton.setOnClickListener(View.OnClickListener {
+        toCaseButton.setOnClickListener {
             startActivity(
                 Intent(
                     this@HomeActivity,
                     CaseInfo::class.java
                 )
             )
-        })
+        }
     }
 }
 
