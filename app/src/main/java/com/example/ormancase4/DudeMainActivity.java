@@ -1,5 +1,6 @@
 package com.example.ormancase4;
 
+import com.example.ormancase4.MapWorker;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -203,7 +204,7 @@ public class DudeMainActivity extends AppCompatActivity implements OnMapReadyCal
         userLatLng = new LatLng(51.930398, 79.073695);
         userMarkerOptions = new MarkerOptions().position(userLatLng).title("Ваше местоположение");
         Drawable drawable = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.baseline_emoji_people_45_cyan);
-        BitmapDescriptor icon = BitmapDescriptorFactory.fromBitmap(MapWorker.DrawableToBitmap(drawable));
+        BitmapDescriptor icon = BitmapDescriptorFactory.fromBitmap(MapWorker.toBitmapFromDrawable(drawable));
         userMarkerOptions.icon(icon);
         myMap.addMarker(userMarkerOptions);
     }
