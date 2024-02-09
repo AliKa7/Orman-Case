@@ -114,6 +114,7 @@ public class DudeMainActivity extends AppCompatActivity implements OnMapReadyCal
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         myMap = googleMap;
+        myMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         initMarkers();
         if (!activityCreated) {
             animateCamera();
@@ -136,7 +137,6 @@ public class DudeMainActivity extends AppCompatActivity implements OnMapReadyCal
             }
         });
     }
-
     public void onMarkerDragMethod(Marker marker) {
         MarkerOptions marketToMove = findMarkerByTitle(marker.getTitle());
         marketToMove.position(marker.getPosition());
@@ -202,7 +202,7 @@ public class DudeMainActivity extends AppCompatActivity implements OnMapReadyCal
     public void userMarkerInit() {
         userLatLng = new LatLng(51.930398, 79.073695);
         userMarkerOptions = new MarkerOptions().position(userLatLng).title("Ваше местоположение");
-        Drawable drawable = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.baseline_emoji_people_45);
+        Drawable drawable = AppCompatResources.getDrawable(getApplicationContext(), R.drawable.baseline_emoji_people_45_cyan);
         BitmapDescriptor icon = BitmapDescriptorFactory.fromBitmap(MapWorker.DrawableToBitmap(drawable));
         userMarkerOptions.icon(icon);
         myMap.addMarker(userMarkerOptions);
