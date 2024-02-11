@@ -12,39 +12,24 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:fontFamily="@font/ubuntu_bold"
+        android:fontFamily="@font/inter_semibold"
         android:text="Какие компоненты ящика вы использовали?"
         android:textAlignment="center"
         android:textColor="@color/main_color"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="320dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:fontFamily="@font/ubuntu"
-        android:hint="Дополнительная информация"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <EditText
         android:id="@+id/caseNumberET"
         android:layout_width="320dp"
         android:layout_height="48dp"
         android:ems="15"
-        android:fontFamily="@font/ubuntu"
+        android:fontFamily="@font/inter_medium"
         android:hint="Введите номер ящика"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,22 +37,37 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687" />
+        app:layout_constraintVertical_bias="0.614" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:fontFamily="@font/inter_medium"
+        android:hint="Дополнительная информация"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.717" />
 
     <Button
         android:id="@+id/sendDataButton"
-        android:layout_width="228dp"
-        android:layout_height="53dp"
+        android:layout_width="229dp"
+        android:layout_height="60dp"
         android:background="@drawable/button_corners_20_stl"
-        android:fontFamily="@font/ubuntu_medium"
+        android:fontFamily="@font/inter_semibold"
         android:text="Отправить данные"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintVertical_bias="0.935" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -76,43 +76,47 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.124">
 
         <CheckBox
             android:id="@+id/checkbox1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ubuntu"
+            android:fontFamily="@font/inter_medium"
             android:text="Изолирующий самоспасатель"
-            android:textSize="18sp" />
+            android:textColor="#656565"
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/ubuntu"
+            android:fontFamily="@font/inter_medium"
             android:text="Медицинская аптечка"
-            android:textSize="18sp" />
+            android:textColor="#656565"
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkbox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/ubuntu"
+            android:fontFamily="@font/inter_medium"
             android:text="Первая бутылка воды"
-            android:textSize="18sp" />
+            android:textColor="#656565"
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkbox4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/ubuntu"
+            android:fontFamily="@font/inter_medium"
             android:text="Вторая бутылка воды"
-            android:textSize="18sp" />
+            android:textColor="#656565"
+            android:textSize="15sp" />
 
     </LinearLayout>
 

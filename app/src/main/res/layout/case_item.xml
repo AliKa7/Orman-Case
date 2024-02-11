@@ -35,7 +35,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ubuntu_bold"
+            android:fontFamily="@font/inter_semibold"
             android:text="@string/item9name"
             android:textAlignment="center"
             android:textColor="@color/main_color"
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/ubuntu_medium"
+            android:fontFamily="@font/inter_medium"
             android:gravity="center"
             android:paddingHorizontal="10dp"
             android:text="Это обезболивающие таблетки. При принятии анальгина, запивайте водой. Дозировка - 0.5 или 1 таблетка.

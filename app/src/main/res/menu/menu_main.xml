@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Состав ящика"/>
-    <item android:title="Вызов SOS"/>
-    <item android:title="Инструкция"/>
+    <item android:title="@string/change_lang_label"/>
 </menu>

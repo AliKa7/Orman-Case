@@ -14,6 +14,7 @@ import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
@@ -29,6 +30,7 @@ class CallSOS : AppCompatActivity() {
     private var smsSent = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.call_sos)
         supportActionBar?.title = ""
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -36,6 +38,12 @@ class CallSOS : AppCompatActivity() {
         phoneNumberLabel = findViewById(R.id.phoneNumberLabel)
         rbFireman = findViewById(R.id.radioButtonFireman)
         rbForester = findViewById(R.id.radioButtonForester)
+        rbFireman.setOnClickListener {
+            phoneNumberLabel.text = "8 (771) 111-78-68"
+        }
+        rbForester.setOnClickListener {
+            phoneNumberLabel.text = "8 (129) 758-55-44"
+        }
         imageView = findViewById(R.id.phoneImageView)
         imageView.setOnClickListener {
             val phoneNumber = resources.getString(R.string.call_phone_number)

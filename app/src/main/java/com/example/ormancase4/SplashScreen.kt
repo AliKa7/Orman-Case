@@ -7,6 +7,7 @@ import android.os.Handler
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 
 
 @SuppressLint("CustomSplashScreen")
@@ -15,6 +16,7 @@ class SplashScreen : AppCompatActivity() {
     lateinit var welcomeText: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.splash_screen)
         logoImage = findViewById(R.id.logoImage)
         welcomeText = findViewById(R.id.welcome)

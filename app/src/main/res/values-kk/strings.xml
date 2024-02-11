@@ -1,22 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Orman Case</string>
     <string name="my_map_api_key">AIzaSyCFowtzYorQe4dJzjqm3oV1C4G6jQnF3vM</string>
     <string name="call_phone_number">8 705 665 3635</string>
     <string name="send_message_phone_number">8 705 665 3635</string>
-    <string name="snackbar_text">Сообщение с вашими координатами успешно отправлено!</string>
+    <string name="snackbar_text">Сіздің координаттары бар хабарлама сәтті жіберілді!</string>
+
     <!-- HOME ACTIVITY LABELS !-->
-    <string name="find_box_label">Найти кейс</string>
-    <string name="groupbox_label">Дополнительно</string>
-    <string name="groupbox_item1">Состав кейса</string>
-    <string name="groupbox_item2">Вызов SOS</string>
-    <string name="groupbox_item3">Инструкция</string>
-    <string name="change_lang_label">Поменять язык на казахский</string>
+    <string name="find_box_label">Кейсті табу</string>
+    <string name="groupbox_label">Қосымша</string>
+    <string name="groupbox_item1">Кейс құрамы</string>
+    <string name="groupbox_item2">SOS шақыру</string>
+    <string name="groupbox_item3">Нұсқаулық</string>
+    <string name="change_lang_label">Орыс тіліне аудару</string>
 
     <!-- СОСТАВ ЯЩИКА !-->
-    <string name="self_rescuer_video1">Информация о самоспасателе</string>
-    <string name="self_rescuer_video2">Как надевать самоспасатель?</string>
+    <string name="self_rescuer_video1">Өзін-өзі құтқарушы жайлы мәлімет</string>
+    <string name="self_rescuer_video2">Өзін-өзі құтқарушыны қалай кию керек?</string>
 
-    <string name="item1name">Изолирующий самоспасатель</string>
+    <string name="item1name">Оқшауланған өзін-өзі құтқарушы</string>
     <string name="item1desc">Критически необходим для защиты дыхательных путей. Наденьте его на голову и выпустите клапон. Будет работать 20 минут в случае ходьбы и 6-8 минут в случае бега</string>
     <string name="item2name">Две бутылки воды</string>
     <string name="item2desc">Выпейте воды, чтобы снизить риск обезвоживания. Также можно охладить ожоги, промывать глаза от пыли и дыма</string>

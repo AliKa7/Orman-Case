@@ -10,24 +10,16 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="Найти ящики"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/find_box_label"
         android:textColor="@color/main_color"
-        android:textSize="22sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.072" />
-
-    <!--<ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="162dp"
-        android:layout_height="145dp"
-        app:srcCompat="@drawable/box_icon"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="108dp" />!-->
 
     <LinearLayout
         android:layout_width="333dp"
@@ -45,21 +37,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
-            android:fontFamily="@font/ubuntu_bold"
-            android:text="Дополнительно"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/groupbox_label"
             android:textColor="@color/main_white"
             android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/toCaseButton"
-            android:layout_width="259dp"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:background="@drawable/button_corners_10_stl"
             android:backgroundTint="@color/soft_color"
-            android:fontFamily="@font/ubuntu_bold"
-            android:text="Состав ящика"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/groupbox_item1"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/main_color"
             android:visibility="visible" />
@@ -72,8 +64,8 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/button_corners_10_stl"
             android:backgroundTint="@color/soft_color"
-            android:fontFamily="@font/ubuntu_bold"
-            android:text="Вызов SOS"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/groupbox_item2"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/main_color" />
 
@@ -85,8 +77,8 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/button_corners_10_stl"
             android:backgroundTint="@color/soft_color"
-            android:fontFamily="@font/ubuntu_bold"
-            android:text="Инструкция"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/groupbox_item3"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/main_color"
             android:visibility="visible" />
@@ -97,7 +89,7 @@
         android:layout_width="169dp"
         android:layout_height="160dp"
         android:contentDescription="Just an image"
-        android:background="@drawable/box_icon"
+        android:background="@drawable/animated_box_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"

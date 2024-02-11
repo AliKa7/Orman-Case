@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 
 
 class NavigationActivity : AppCompatActivity() {
     lateinit var button: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.navigation)
         supportActionBar!!.title = "Навигация"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

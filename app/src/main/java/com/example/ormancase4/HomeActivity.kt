@@ -2,12 +2,31 @@ package com.example.ormancase4
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.animation.LinearInterpolator
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
+import androidx.core.os.ConfigurationCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import java.lang.reflect.Method
+import java.util.Locale
 
 
 class HomeActivity : AppCompatActivity() {
@@ -18,6 +37,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var animatorSet: AnimatorSet
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.home)
         //toMainActivityButton = findViewById(R.id.toMainActivity);
         imageButton = findViewById(R.id.imageButton)
@@ -67,5 +87,69 @@ class HomeActivity : AppCompatActivity() {
             )
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        for (i in 0 until menu.size()) {
+            val menuItem = menu.getItem(i)
+            val spannableString = SpannableString(menuItem.title)
+            spannableString.setSpan(
+                ForegroundColorSpan(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.main_color
+                    )
+                ), 0, spannableString.length, 0
+            )
+            menuItem.title = spannableString
+        }
+        return true
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        /*if (menu.javaClass.simpleName == "MenuBuilder") {
+            try {
+                val m: Method = menu.javaClass.getDeclaredMethod("setOptionalIconsVisible", Boolean::class.javaPrimitiveType)
+                m.isAccessible = true
+                m.invoke(menu, true)
+            } catch (e: Exception) {
+                Log.e(javaClass.simpleName, "onMenuOpened...unable to set icons for overflow menu", e)
+            }
+        }*/
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+    @OptIn(DelicateCoroutinesApi::class)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (getCurrentLanguage(this) == "kk") {
+            setLocal(this@HomeActivity, "ru")
+            item.title = "Поменять язык на казахский"
+        } else {
+            setLocal(this@HomeActivity, "kk")
+            item.title = "Орыс тіліне аудару"
+        }
+        recreate()
+        return true
+    }
+
+    private fun setLocal(context: Context, langCode: String) {
+        Locale.setDefault(Locale(langCode))
+        val resources: Resources = context.resources
+        val configuration: Configuration = resources.configuration
+        resources.configuration.setLocale(Locale(langCode))
+        resources.updateConfiguration(configuration, resources.displayMetrics)
+    }
+
+    private fun getCurrentLanguage(context: Context): String {
+        val configuration = context.resources.configuration
+        val currentLocaleList = ConfigurationCompat.getLocales(configuration)
+        val currentLocale = currentLocaleList[0]
+        if (currentLocale != null) {
+            return currentLocale.language
+        } else {
+            return "salam"
+        }
+    }
 }
+
 

@@ -2,6 +2,7 @@ package com.example.ormancase4
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -12,6 +13,7 @@ class AdditionalInfo : AppCompatActivity() {
     private var instructionItemList: MutableList<InstructionItem> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.additional_info)
         supportActionBar!!.title = "Инструкция"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -46,7 +48,7 @@ class AdditionalInfo : AppCompatActivity() {
             InstructionItem(
                 R.drawable.advice4,
                 "4",
-                "Откройте ящик и доставайте оттуда нужные вам вещи. Внутри есть информационная брошюра, на коробке самоспасателя находится инструкция."
+                "Откройте ящик и достаньте нужные вещи. Внутри также информ. брошюра, а на коробке самоспасателя есть инструкция"
             )
         )
         adapter = InstructionItemAdapter(instructionItemList)

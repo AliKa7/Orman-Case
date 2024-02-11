@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import com.example.ormancase4.MapWorker.Companion.convertLocationStringToLatLng
@@ -50,7 +51,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private var activityCreated = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.dude_activity_main)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        setContentView(R.layout.activity_main)
         supportActionBar?.title = "Поиск ящиков"
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         FirebaseApp.initializeApp(this@MainActivity)
@@ -109,7 +111,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         myMap = googleMap
-        myMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
+        myMap.mapType = GoogleMap.MAP_TYPE_HYBRID
         initMarkers()
         if (!activityCreated) {
             animateCamera()
