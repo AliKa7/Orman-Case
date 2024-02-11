@@ -43,7 +43,7 @@
             android:background="@drawable/button_corners_10_stl"
             android:backgroundTint="@color/main_color"
             android:fontFamily="@font/inter_semibold"
-            android:text="Как надевать?"
+            android:text="О том, как надевать"
             android:textAllCaps="false"
             android:textColor="@color/white" />
     </LinearLayout>

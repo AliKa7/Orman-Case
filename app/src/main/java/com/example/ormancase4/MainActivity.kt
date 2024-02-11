@@ -100,8 +100,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         tasks.addOnSuccessListener { location ->
             if (location != null) {
                 userLocation = Location("")
-                userLocation.latitude = 51.930398
-                userLocation.longitude = 79.073695
+                userLocation.latitude = 51.90905450331772
+                userLocation.longitude = 79.0954135445567
                 mapFragment =
                     supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
                 mapFragment.getMapAsync(this@MainActivity)
@@ -203,7 +203,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     fun userMarkerInit() {
-        userLatLng = LatLng(51.930398, 79.073695)
+        userLatLng = LatLng(51.90905450331772, 79.0954135445567)
         userMarkerOptions = MarkerOptions().position(userLatLng).title("Ваше местоположение")
         val drawable = AppCompatResources.getDrawable(
             applicationContext,
