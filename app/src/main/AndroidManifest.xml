@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdditionalInfo"
+            android:name=".Instruction"
             android:exported="true"
             android:parentActivityName=".MainActivity">
             <intent-filter>

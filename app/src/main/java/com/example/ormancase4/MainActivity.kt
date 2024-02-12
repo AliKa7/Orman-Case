@@ -137,7 +137,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         marketToMove!!.position(marker.position)
         closestCaseOptions = getClosestMarker(
             markerOptionsList,
-            userLocation, distanceText, getCurrentLanguage(this@MainActivity)
+            userLocation, distanceText, LanguageModel.getCurrentLanguage(this@MainActivity)
         )
     }
 
@@ -183,7 +183,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                             closestCaseOptions = getClosestMarker(
                                 markerOptionsList,
                                 userLocation, distanceText,
-                                getCurrentLanguage(this@MainActivity)
+                                LanguageModel.getCurrentLanguage(this@MainActivity)
                             )
                         }
                     } else { // updated marker
@@ -257,15 +257,5 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
             else -> markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
         }
-    }
-}
-private fun getCurrentLanguage(context: Context): String {
-    val configuration = context.resources.configuration
-    val currentLocaleList = ConfigurationCompat.getLocales(configuration)
-    val currentLocale = currentLocaleList[0]
-    if (currentLocale != null) {
-        return currentLocale.language
-    } else {
-        return "salam"
     }
 }

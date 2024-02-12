@@ -1,5 +1,6 @@
 package com.example.ormancase4
 
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -7,14 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
-class AdditionalInfo : AppCompatActivity() {
+class Instruction : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: InstructionItemAdapter
     private var instructionItemList: MutableList<InstructionItem> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        setContentView(R.layout.additional_info)
+        setContentView(R.layout.instruction)
         supportActionBar!!.title = "Инструкция"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.white_back_arrow)
@@ -27,28 +28,28 @@ class AdditionalInfo : AppCompatActivity() {
             InstructionItem(
                 R.drawable.advice1,
                 "1",
-                "Опираясь на наше приложение, пройдите к местоположению ящика, которое указано на карте"
+                resources.getString(R.string.instruction1)
             )
         )
         instructionItemList.add(
             InstructionItem(
                 R.drawable.advice2,
                 "2",
-                "Приблизившись к ящику, вы увидите табличку - ориентир"
+                resources.getString(R.string.instruction2)
             )
         )
         instructionItemList.add(
             InstructionItem(
                 R.drawable.advice3,
                 "3",
-                "На поверхности вы обнаружите железную крышку с интегрированной ручкой. Откройте ее"
+                resources.getString(R.string.instruction3)
             )
         )
         instructionItemList.add(
             InstructionItem(
                 R.drawable.advice4,
                 "4",
-                "Откройте ящик и достаньте нужные вещи. Внутри также информ. брошюра, а на коробке самоспасателя есть инструкция"
+                resources.getString(R.string.instruction4)
             )
         )
         adapter = InstructionItemAdapter(instructionItemList)

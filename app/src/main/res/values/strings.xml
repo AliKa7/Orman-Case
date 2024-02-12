@@ -71,4 +71,11 @@
     <string name="main_screen_to_navigation_button">Легенда</string>
     <string name="main_screen_case_found">Я нашел кейс</string>
     <string name="main_screen_distance">Расстояние от вас до ближайшего ящика</string>
+
+    <!-- ИНСТРУКЦИЯ !-->
+    <string name="instruction_label">Как найти ящик Orman Case, используя наше приложение?</string>
+    <string name="instruction1">Опираясь на карту в приложении, пройдите к указанному местоположению ближайшего ящика</string>
+    <string name="instruction2">Приблизившись к ящику, вы увидите красную табличку</string>
+    <string name="instruction3">На поверхности вы обнаружите железную крышку с интегрированной ручкой. Откройте ее</string>
+    <string name="instruction4">Откройте ящик и достаньте нужные вещи. Внутри также информ. брошюра, а на коробке самоспасателя есть инструкция</string>
 </resources>

@@ -73,4 +73,11 @@
     <string name="main_screen_to_navigation_button">Карта аңызы</string>
     <string name="main_screen_case_found">Кейс табылды</string>
     <string name="main_screen_distance">Сізден ең жақын кейске \nдейінгі қашықтық</string>
+
+    <!-- ИНСТРУКЦИЯ !-->
+    <string name="instruction_label">Біздің қосымшамыз арқылы Orman Case қалай табуға болады?</string>
+    <string name="instruction1">Қосымашадағы картаға сүйене отырып, ең жақын кейстің көрсетілген орнына барыңыз</string>
+    <string name="instruction2">Кейске жақындаған кезде сіз қызыл түсті белгіні көресіз</string>
+    <string name="instruction3">етінде сіз біріктірілген тұтқасы бар темір қақпақты таба аласыз. Оны ашыңыз</string>
+    <string name="instruction4">Тартпаны ашып, қажетті заттарды алыңыз. Ішінде тағы ақпараттық брошюра, өзін-өзі құтқарушыны дұрыс кию нұсқаулығы бар</string>
 </resources>

@@ -2,31 +2,19 @@ package com.example.ormancase4
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
-import android.content.res.Resources
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.animation.LinearInterpolator
 import android.widget.Button
 import android.widget.ImageButton
-import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
-import androidx.core.os.ConfigurationCompat
-import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import java.lang.reflect.Method
-import java.util.Locale
 
 
 class HomeActivity : AppCompatActivity() {
@@ -74,7 +62,7 @@ class HomeActivity : AppCompatActivity() {
         }
         toAdditionInfoButton = findViewById(R.id.toAddnInfoButton)
         toAdditionInfoButton.setOnClickListener {
-            val intent = Intent(this@HomeActivity, AdditionalInfo::class.java)
+            val intent = Intent(this@HomeActivity, Instruction::class.java)
             startActivity(intent)
         }
         toCaseButton = findViewById(R.id.toCaseButton)
@@ -121,34 +109,15 @@ class HomeActivity : AppCompatActivity() {
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (getCurrentLanguage(this) == "kk") {
-            setLocal(this@HomeActivity, "ru")
+        if (LanguageModel.getCurrentLanguage(this) == "kk") {
+            LanguageModel.setLocal(this@HomeActivity, "ru")
             item.title = "Поменять язык на казахский"
         } else {
-            setLocal(this@HomeActivity, "kk")
+            LanguageModel.setLocal(this@HomeActivity, "kk")
             item.title = "Орыс тіліне аудару"
         }
         recreate()
         return true
-    }
-
-    private fun setLocal(context: Context, langCode: String) {
-        Locale.setDefault(Locale(langCode))
-        val resources: Resources = context.resources
-        val configuration: Configuration = resources.configuration
-        resources.configuration.setLocale(Locale(langCode))
-        resources.updateConfiguration(configuration, resources.displayMetrics)
-    }
-
-    private fun getCurrentLanguage(context: Context): String {
-        val configuration = context.resources.configuration
-        val currentLocaleList = ConfigurationCompat.getLocales(configuration)
-        val currentLocale = currentLocaleList[0]
-        if (currentLocale != null) {
-            return currentLocale.language
-        } else {
-            return "salam"
-        }
     }
 }
 
