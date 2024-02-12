@@ -18,6 +18,12 @@
     <string name="self_rescuer_video1">Өзін-өзі құтқарушы жайлы мәлімет</string>
     <string name="self_rescuer_video2">Өзін-өзі құтқарушыны қалай кию керек?</string>
 
+    <!-- CALL SOS !-->
+    <string name="call_sos_label">Өрт сөндіру бөліміне/орманшыларға қоңырау шалу үшін төмендегі телефонды басыңыз</string>
+    <string name="call_sos_foresters">Орманшылар</string>
+    <string name="call_sos_firefighters">Өрт сөндірушілер</string>
+    <string name="call_sos_button">Менің орналасуым туралы SMS жіберу</string>
+
     <string name="item1name">Оқшауланған өзін-өзі құтқарушы</string>
     <string name="item1desc">Критически необходим для защиты дыхательных путей. Наденьте его на голову и выпустите клапон. Будет работать 20 минут в случае ходьбы и 6-8 минут в случае бега</string>
     <string name="item2name">Две бутылки воды</string>
@@ -55,4 +61,16 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!-- Легенда карты !-->
+    <string name="navigation_label">Легенда карты</string>
+    <string name="navigation_first_mark">Сіздің \nорналасуыңыз</string>
+    <string name="navigation_second_mark">Толық кейс</string>
+    <string name="navigation_third_mark">Жартылай \пайдаланылған кейс</string>
+    <string name="navigation_back_button">Негізгі экранға оралу</string>
+
+    <!-- ГЛАВНЫЙ ЭКРАН !-->
+    <string name="main_screen_to_navigation_button">Карта аңызы</string>
+    <string name="main_screen_case_found">Кейс табылды</string>
+    <string name="main_screen_distance">Сізден ең жақын кейске \nдейінгі қашықтық</string>
 </resources>

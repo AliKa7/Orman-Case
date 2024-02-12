@@ -1,6 +1,7 @@
 package com.example.ormancase4
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
+import androidx.core.os.ConfigurationCompat
 import com.example.ormancase4.MapWorker.Companion.convertLocationStringToLatLng
 import com.example.ormancase4.MapWorker.Companion.getClosestMarker
 import com.example.ormancase4.MapWorker.Companion.toBitmapFromDrawable
@@ -135,7 +137,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         marketToMove!!.position(marker.position)
         closestCaseOptions = getClosestMarker(
             markerOptionsList,
-            userLocation, distanceText
+            userLocation, distanceText, getCurrentLanguage(this@MainActivity)
         )
     }
 
@@ -180,7 +182,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                             allMarkersInitialized = true
                             closestCaseOptions = getClosestMarker(
                                 markerOptionsList,
-                                userLocation, distanceText
+                                userLocation, distanceText,
+                                getCurrentLanguage(this@MainActivity)
                             )
                         }
                     } else { // updated marker
@@ -254,5 +257,15 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
             else -> markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
         }
+    }
+}
+private fun getCurrentLanguage(context: Context): String {
+    val configuration = context.resources.configuration
+    val currentLocaleList = ConfigurationCompat.getLocales(configuration)
+    val currentLocale = currentLocaleList[0]
+    if (currentLocale != null) {
+        return currentLocale.language
+    } else {
+        return "salam"
     }
 }

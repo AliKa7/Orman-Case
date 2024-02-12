@@ -1,6 +1,7 @@
 package com.example.ormancase4
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -8,10 +9,10 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.location.Location
 import android.widget.TextView
+import androidx.core.os.ConfigurationCompat
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
-
 
 class MapWorker {
     companion object {
@@ -31,7 +32,8 @@ class MapWorker {
         fun getClosestMarker(
             markerOptionsList: ArrayList<MarkerOptions>,
             userLocation: Location,
-            distanceText: TextView
+            distanceText: TextView,
+            language: String
         ): MarkerOptions {
             var minimalDistance = 10000000
             lateinit var closestCaseOptions: MarkerOptions
@@ -45,7 +47,12 @@ class MapWorker {
                     closestCaseOptions = markerOptionsList[i]
                 }
             }
-            distanceText.text = "$minimalDistance метров"
+            if (language == "kk") {
+                distanceText.text = "$minimalDistance метр"
+            }
+            else {
+                distanceText.text = "$minimalDistance метров"
+            }
             return closestCaseOptions
         }
 
@@ -79,5 +86,4 @@ class MapWorker {
             return bitmap
         }
     }
-
 }

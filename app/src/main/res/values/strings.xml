@@ -5,9 +5,9 @@
     <string name="send_message_phone_number">8 705 665 3635</string>
     <string name="snackbar_text">Сообщение с вашими координатами успешно отправлено!</string>
     <!-- HOME ACTIVITY LABELS !-->
-    <string name="find_box_label">Найти кейс</string>
+    <string name="find_box_label">Найти ящик</string>
     <string name="groupbox_label">Дополнительно</string>
-    <string name="groupbox_item1">Состав кейса</string>
+    <string name="groupbox_item1">Состав ящик</string>
     <string name="groupbox_item2">Вызов SOS</string>
     <string name="groupbox_item3">Инструкция</string>
     <string name="change_lang_label">Поменять язык на казахский</string>
@@ -15,6 +15,12 @@
     <!-- СОСТАВ ЯЩИКА !-->
     <string name="self_rescuer_video1">Информация о самоспасателе</string>
     <string name="self_rescuer_video2">Как надевать самоспасатель?</string>
+
+    <!-- CALL SOS !-->
+    <string name="call_sos_label">Нажмите на телефон ниже, чтобы позвонить пожарной охране/лесничеству</string>
+    <string name="call_sos_foresters">Лесничество</string>
+    <string name="call_sos_firefighters">Пожарные</string>
+    <string name="call_sos_button">Отправить СМС о моем местоположении</string>
 
     <string name="item1name">Изолирующий самоспасатель</string>
     <string name="item1desc">Критически необходим для защиты дыхательных путей. Наденьте его на голову и выпустите клапон. Будет работать 20 минут в случае ходьбы и 6-8 минут в случае бега</string>
@@ -53,4 +59,16 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!-- Легенда карты !-->
+    <string name="navigation_label">Карта аңызы</string>
+    <string name="navigation_first_mark">Ваше \nместоположение</string>
+    <string name="navigation_second_mark">Полностью \nцелый ящик</string>
+    <string name="navigation_third_mark">Частично \nиспользованный ящик</string>
+    <string name="navigation_back_button">Обратно к главному экрану</string>
+
+    <!-- ГЛАВНЫЙ ЭКРАН !-->
+    <string name="main_screen_to_navigation_button">Легенда</string>
+    <string name="main_screen_case_found">Я нашел кейс</string>
+    <string name="main_screen_distance">Расстояние от вас до ближайшего ящика</string>
 </resources>

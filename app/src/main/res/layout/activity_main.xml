@@ -38,27 +38,28 @@
 
     <TextView
         android:id="@+id/distanceLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="340dp"
+        android:layout_height="69dp"
         android:fontFamily="@font/inter_medium"
         android:gravity="center"
-        android:text="Расстояние от вас до ближайшего ящика"
+        android:text="@string/main_screen_distance"
         android:textColor="@color/main_color"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/map"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.409" />
+        app:layout_constraintVertical_bias="0.266" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goToNavigation"
-        android:layout_width="160dp"
+        android:layout_width="180dp"
         android:layout_height="61dp"
         android:background="@drawable/button_corners_30_stl"
         android:backgroundTint="#CCF4E2"
         android:fontFamily="@font/inter_semibold"
-        android:text="Навигация"
+        android:text="@string/main_screen_to_navigation_button"
         android:textAppearance="@color/design_default_color_background"
         android:textColor="@color/main_color"
         android:textSize="16sp"
@@ -71,12 +72,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/caseFinded"
-        android:layout_width="181dp"
+        android:layout_width="180dp"
         android:layout_height="61dp"
         android:background="@drawable/button_corners_30_stl"
         android:backgroundTint="@color/main_color"
         android:fontFamily="@font/inter_semibold"
-        android:text="Я нашел ящик"
+        android:text="@string/main_screen_case_found"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/white"
         android:textSize="16sp"
