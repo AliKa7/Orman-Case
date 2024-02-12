@@ -16,7 +16,9 @@ class Instruction : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.instruction)
-        supportActionBar!!.title = "Инструкция"
+        supportActionBar?.title = if (
+            LanguageModel.getCurrentLanguage(this@Instruction) == "ru"
+        ) "Инструкция" else "Нұсқаулық"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.white_back_arrow)
         recyclerView = findViewById(R.id.recyclerView)

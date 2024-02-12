@@ -55,7 +55,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_main)
-        supportActionBar?.title = "Поиск ящиков"
+        supportActionBar?.title =  if (
+            LanguageModel.getCurrentLanguage(this@MainActivity) == "ru"
+            ) "Поиск ящиков" else "Кейстерді іздеу"
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         FirebaseApp.initializeApp(this@MainActivity)
         distanceText = findViewById(R.id.distanceText)

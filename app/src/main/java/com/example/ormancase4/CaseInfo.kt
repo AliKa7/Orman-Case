@@ -44,7 +44,9 @@ class CaseInfo : AppCompatActivity() {
         setContentView(R.layout.case_info)
         recyclerView = findViewById(R.id.recyclerView)
         init()
-        supportActionBar!!.title = "Состав ящика"
+        supportActionBar?.title = if (
+            LanguageModel.getCurrentLanguage(this@CaseInfo) == "ru"
+        ) "Состав ящика" else "Кейс құрамы"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.white_back_arrow)
         val path1 = "android.resource://" + packageName + "/" + R.raw.video_about

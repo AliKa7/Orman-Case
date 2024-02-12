@@ -32,7 +32,9 @@ class CallSOS : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.call_sos)
-        supportActionBar?.title = ""
+        supportActionBar?.title = if (
+            LanguageModel.getCurrentLanguage(this@CallSOS) == "ru"
+        ) "Вызов SOS" else "SOS шақыру"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.white_back_arrow)
         phoneNumberLabel = findViewById(R.id.phoneNumberLabel)

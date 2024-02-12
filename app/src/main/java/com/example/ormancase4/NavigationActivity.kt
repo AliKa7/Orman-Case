@@ -13,7 +13,6 @@ class NavigationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.navigation)
-        supportActionBar!!.title = "Навигация"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.white_back_arrow)
         button = findViewById(R.id.goBackToMainActivity)

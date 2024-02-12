@@ -25,7 +25,9 @@ class AfterFinding : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.after_finding)
-        supportActionBar!!.title = "Ящик найден"
+        supportActionBar?.title = if (
+            LanguageModel.getCurrentLanguage(this@AfterFinding) == "ru"
+        ) "Ящик найден" else "Кейс табылған"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.white_back_arrow)
         checkBox1 = findViewById(R.id.checkbox1)
