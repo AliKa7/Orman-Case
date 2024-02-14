@@ -55,9 +55,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_main)
-        supportActionBar?.title =  if (
+        supportActionBar?.title = if (
             LanguageModel.getCurrentLanguage(this@MainActivity) == "ru"
-            ) "Поиск ящиков" else "Кейстерді іздеу"
+        ) "Поиск ящиков" else "Кейстерді іздеу"
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         FirebaseApp.initializeApp(this@MainActivity)
         distanceText = findViewById(R.id.distanceText)
@@ -84,10 +84,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun getLastLocation() {
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+            != PackageManager.PERMISSION_GRANTED
             && ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACCESS_COARSE_LOCATION
@@ -106,8 +104,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 userLocation = Location("")
                 userLocation.latitude = 51.90905450331772
                 userLocation.longitude = 79.0954135445567
-                mapFragment =
-                    supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+                mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
                 mapFragment.getMapAsync(this@MainActivity)
             }
         }
