@@ -75,7 +75,7 @@ class CaseInfo : AppCompatActivity() {
                     videoView2.stopPlayback()
                     videoView2.visibility = View.INVISIBLE
                 }
-                openDialogButton.text = "Видео о самоспасателе"
+                openDialogButton.text = resources.getText(R.string.video_button)
                 openDialogButton.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.main_color))
             }
             isVideoOn = !isVideoOn
@@ -83,9 +83,9 @@ class CaseInfo : AppCompatActivity() {
         //////////////
         adviceLabel = findViewById(R.id.adviceLabel)
         symptoms = arrayOf(
-            "Сильное кровотечение",
-            "Термический ожог", "Отравление угарным газом", "Дезинфицировать рану",
-            "Тепловой удар", "Проблемы с сердцем"
+            resources.getString(R.string.issues_item1),
+            resources.getString(R.string.issues_item2), resources.getString(R.string.issues_item3), resources.getString(R.string.issues_item4),
+            resources.getString(R.string.issues_item5), resources.getString(R.string.issues_item6)
         )
         autoCompleteTextView = findViewById(R.id.autoCompleteText)
         symptomAdapter = ArrayAdapter(this, R.layout.symptom_item, symptoms)
@@ -95,34 +95,34 @@ class CaseInfo : AppCompatActivity() {
             var advice = ""
             val layoutManager = recyclerView.layoutManager
             when (item) {
-                "Сильное кровотечение" -> {
+                resources.getString(R.string.issues_item1) -> {
                     layoutManager!!.smoothScrollToPosition(recyclerView, RecyclerView.State(), 6)
-                    advice = "Используйте жгут для перевязки раны"
+                    advice = resources.getString(R.string.issues_solves1)
                 }
 
-                "Термический ожог" -> {
+                resources.getString(R.string.issues_item2) -> {
                     layoutManager!!.smoothScrollToPosition(recyclerView, RecyclerView.State(), 3)
-                    advice = "Используйте марлевые бинты и перекись водорода"
+                    advice = resources.getString(R.string.issues_solves2)
                 }
 
-                "Отравление угарным газом" -> {
+                resources.getString(R.string.issues_item3) -> {
                     layoutManager!!.smoothScrollToPosition(recyclerView, RecyclerView.State(), 9)
-                    advice = "Используйте активированный уголь"
+                    advice = resources.getString(R.string.issues_solves3)
                 }
 
-                "Дезинфицировать рану" -> {
+                resources.getString(R.string.issues_item4) -> {
                     layoutManager!!.smoothScrollToPosition(recyclerView, RecyclerView.State(), 8)
-                    advice = "Используйте лейкопластырь или бриллиантовый зеленый"
+                    advice = resources.getString(R.string.issues_solves4)
                 }
 
-                "Тепловой удар" -> {
+                resources.getString(R.string.issues_item5) -> {
                     layoutManager!!.smoothScrollToPosition(recyclerView, RecyclerView.State(), 2)
-                    advice = "Используйте ацетилсалициловую кислоту"
+                    advice = resources.getString(R.string.issues_solves5)
                 }
 
-                "Проблемы с сердцем" -> {
+                resources.getString(R.string.issues_item6) -> {
                     layoutManager!!.smoothScrollToPosition(recyclerView, RecyclerView.State(), 4)
-                    advice = "Используйте нитроглицерин"
+                    advice = resources.getString(R.string.issues_solves6)
                 }
             }
             adviceLabel.text = advice
@@ -141,14 +141,14 @@ class CaseInfo : AppCompatActivity() {
             videoView1.visibility = View.VISIBLE
             videoView1.start()
             dialog.dismiss()
-            openDialogButton.text = "Выключить видео"
+            openDialogButton.text = resources.getText(R.string.close_video)
             openDialogButton.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red_color))
         }
         buttonWearingVideo.setOnClickListener {
             videoView2.visibility = View.VISIBLE
             videoView2.start()
             dialog.dismiss()
-            openDialogButton.text = "Выключить видео"
+            openDialogButton.text = resources.getText(R.string.close_video)
             openDialogButton.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red_color))
         }
         dialog.show()

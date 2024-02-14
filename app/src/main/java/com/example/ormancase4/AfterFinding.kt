@@ -54,7 +54,7 @@ class AfterFinding : AppCompatActivity() {
             }
             when (checkedCount) {
                 0 -> {
-                    Snackbar.make(v, "Вы не заполнили все данные!", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(v, resources.getString(R.string.snackbar_not_enough_data), Snackbar.LENGTH_LONG).show()
                     return@OnClickListener
                 }
 
@@ -66,7 +66,7 @@ class AfterFinding : AppCompatActivity() {
                     caseRef.child("Fullness").setValue("Пустой")
                 }
             }
-            Snackbar.make(v, "Данные отправлены! Спасибо за обратную связь!", Snackbar.LENGTH_SHORT)
+            Snackbar.make(v, resources.getString(R.string.snackbar_success), Snackbar.LENGTH_SHORT)
                 .show()
         })
     }

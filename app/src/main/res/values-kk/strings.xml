@@ -24,34 +24,51 @@
     <string name="call_sos_firefighters">Өрт сөндірушілер</string>
     <string name="call_sos_button">Менің орналасуым туралы SMS жіберу</string>
 
+    <!-- СОСТАВ ЯЩИКА !-->
+    <string name="sostav_label">Кейс ішінде не бар?</string>
+    <string name="issues_item1">Ауыр қан кету</string>
+    <string name="issues_item2">Термиялық күйік</string>
+    <string name="issues_item3">Көміртек тотығымен улану</string>
+    <string name="issues_item4">Жараны дезинфекциялау</string>
+    <string name="issues_item5">Ыстық соққысы</string>
+    <string name="issues_item6">Жүрек ауруы</string>
+
+    <string name="issues_solves1">Жараны таңу үшін жарақаттық шокты қолданыңыз</string>
+    <string name="issues_solves2">Дәке таңғыштарын және сутегі асқын тотығын қолданыңыз</string>
+    <string name="issues_solves3">Белсендірілген көмірді қолданыңыз</string>
+    <string name="issues_solves4">Бриллиантты көкті не бактерицидті жабысқақ сылақты қолданыңыз</string>
+    <string name="issues_solves5">Ацетилсалицил қышқылын қолданыңыз</string>
+    <string name="issues_solves6">Нитроглицерин қолданыңыз</string>
+    <string name="choose_bar_label">Ауруды шеше алатын зат</string>
+
     <string name="item1name">Оқшауланған өзін-өзі құтқарушы</string>
-    <string name="item1desc">Критически необходим для защиты дыхательных путей. Наденьте его на голову и выпустите клапон. Будет работать 20 минут в случае ходьбы и 6-8 минут в случае бега</string>
-    <string name="item2name">Две бутылки воды</string>
-    <string name="item2desc">Выпейте воды, чтобы снизить риск обезвоживания. Также можно охладить ожоги, промывать глаза от пыли и дыма</string>
-    <string name="item3name">Ацетилсалициловая кислота</string>
-    <string name="item3desc">Если вы старше 16 лет, приняйте 1 таблетку для снижения температуры при тепловом ударе или облегчения болевых симптомов</string>
-    <string name="item4name">Марлевые бинты</string>
-    <string name="item4desc">Необходимы для фиксации повязок, остановки кровотечения. Хорошо впитывают влагу</string>
+    <string name="item1desc">Тыныс алу жолдарын қорғау үшін маңызды. Оны басыңызға қойып, клапанды босатыңыз. Жаяу жүргенде 20 минут, жүгіргенде 6–8 минут жұмыс істейді.</string>
+    <string name="item2name">2 литр су</string>
+    <string name="item2desc">Сусыздандыру қаупін азайту үшін су ішіңіз. Сондай-ақ, күйіктерді суытып, көзді шаң мен түтіннен жууға болады.</string>
+    <string name="item3name">Ацетилсалицил қышқылы</string>
+    <string name="item3desc">Егер сіз 16 жастан асқан болсаңыз, жылу соққысын төмендету немесе ауырсыну белгілерін жеңілдету үшін 1 таблеткадан алыңыз.</string>
+    <string name="item4name">Дәке таңғыштары</string>
+    <string name="item4desc">Таңғыштарды бекіту және қан кетуді тоқтату үшін қажет. Ылғалды жақсы сіңіреді.</string>
     <string name="item5name">Нитроглицерин</string>
-    <string name="item5desc">Используйте для снятия симптомов сердечно-сосудистых заболеваний. Принимайте по одной таблетке под язык</string>
-    <string name="item6name">Бриллиантовый зеленый</string>
-    <string name="item6desc">Антисептик, наносите на раны для предотвращения инфекций</string>
-    <string name="item7name">Жгут</string>
-    <string name="item7desc">Если у вас сильное кровотечение, жестко зафикситруйте жгут выше места травмы</string>
-    <string name="item8name">Перекись водорода</string>
-    <string name="item8desc">Используйте для обработки ран и термических ожогов.</string>
-    <string name="item9name">Лейкопластырь бакцерицидный</string>
-    <string name="item9desc">Нанесите на раны, чтобы защититься от инфекций.</string>
-    <string name="item10name">Уголь активированный</string>
-    <string name="item10desc">Примите внутрь и запейте водой при отравлении угарным газом или другими токсичными веществами</string>
+    <string name="item5desc">Жүрек-тамыр ауруларының белгілерін жеңілдету үшін қолданыңыз. Бір таблетканы тіл астына алыңыз.</string>
+    <string name="item6name">Бриллиантты көк</string>
+    <string name="item6desc">Антисептикалық, инфекциялардың алдын алу үшін жараларға жағыңыз</string>
+    <string name="item7name">Жарақаттық шок</string>
+    <string name="item7desc">Егер сіз қатты қан кетіп жатсаңыз, турникетті жарақаттың үстінен мықтап бекітіңіз.</string>
+    <string name="item8name">Сутегі асқын тотығы</string>
+    <string name="item8desc">Жараларды және жылу күйіктерді емдеу үшін қолданыңыз.</string>
+    <string name="item9name">Бактерицидті жабысқақ сылақ</string>
+    <string name="item9desc">Кішкене кесектерге, абразияларға, сызаттарға және басқа да ұсақ тері зақымдарына жағыңыз.</string>
+    <string name="item10name">Белсендірілген көмір</string>
+    <string name="item10desc">Көміртек тотығы немесе басқа улы заттармен уланған жағдайда ауызша қабылдаңыз және су ішіңіз.</string>
     <string name="item11name">Аммиак</string>
-    <string name="item11desc">Приподнесите к лицу, если чувствуете, что теряете сознание из-за недостатка кислорода</string>
+    <string name="item11desc">Егер сіз оттегінің жетіспеушілігінен есіңізді жоғалтып алғаныңызды сезсеңіз, оны бетіңізге апарыңыз.</string>
     <string name="item12name">Корвалол</string>
-    <string name="item12desc">Примите для снятия стресса, не больше 15-20 капель с водой за раз</string>
+    <string name="item12desc">Стрессті жеңілдету үшін бір уақытта сумен 15-20 тамшыдан артық емес алыңыз.</string>
     <string name="item13name">Валидол</string>
-    <string name="item13desc">Разместите под языком и рассасывайте для облегчения боли, связанной с сердечно-сосудистой системой или пищеварительным трактом.</string>
-    <string name="item14name">Вата</string>
-    <string name="item14desc">Можно использовать для дополнительной обработки ран</string>
+    <string name="item13desc">Жүрек-тамыр жүйесі немесе ас қорыту жолдарымен байланысты ауырсынуды жеңілдету үшін тілдің астына қойып, ерітіңіз.</string>
+    <string name="item14name">Мақта жүн</string>
+    <string name="item14desc">Жараларды қосымша емдеу үшін қолдануға болады.</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -63,10 +80,10 @@
     <string name="login_failed">"Login failed"</string>
 
     <!-- Легенда карты !-->
-    <string name="navigation_label">Легенда карты</string>
+    <string name="navigation_label">Карта аңызы</string>
     <string name="navigation_first_mark">Сіздің \nорналасуыңыз</string>
     <string name="navigation_second_mark">Толық кейс</string>
-    <string name="navigation_third_mark">Жартылай \пайдаланылған кейс</string>
+    <string name="navigation_third_mark">Жартылай \nпайдаланылған кейс</string>
     <string name="navigation_back_button">Негізгі экранға оралу</string>
 
     <!-- ГЛАВНЫЙ ЭКРАН !-->
@@ -82,4 +99,24 @@
     <string name="instruction4">Тартпаны ашып, қажетті заттарды алыңыз. Ішінде тағы ақпараттық брошюра, өзін-өзі құтқарушыны дұрыс кию нұсқаулығы бар</string>
 
     <!-- SCREEN TOP BAR LABELS !-->
+
+    <!-- CASE INFO SCREEN !-->
+    <string name="video_button">Өзін-өзі құтқарушы жайлы видео</string>
+    <string name="video_dialog_label">Видео таңдаңыз</string>
+    <string name="video_dialog_variant1">Жалпы ақпарат</string>
+    <string name="video_dialog_variant2">Дұрыс кию нұсқаулығы</string>
+    <string name="close_video">Видео сөндіру</string>
+
+    <!-- AFTER FINDING !-->
+    <string name="after_finding_label">Сіз кейстің қандай компоненттерін қолдандыңыз?</string>
+    <string name="after_finding_edittext1_label">Кейс нөмірін жазыңыз</string>
+    <string name="after_finding_edittext2_label">Қосымша ақпарат</string>
+    <string name="after_finding_checkbox1">Өзін-өзі құтқарушы</string>
+    <string name="after_finding_checkbox2">Алғашқы көмек қобдышасы</string>
+    <string name="after_finding_checkbox3">Бірінші бөтелке су</string>
+    <string name="after_finding_checkbox4">Екінші бөтелке су</string>
+    <string name="after_finding_senddata_button">Ақпаратты жіберу</string>
+
+    <string name="snackbar_not_enough_data">Бүкіл ақпаратты толтырыңыз!</string>
+    <string name="snackbar_success">Ақапарат жіберліген! Кері байланысыңыз үшін рахмет!</string>
 </resources>

@@ -7,7 +7,7 @@
     <!-- HOME ACTIVITY LABELS !-->
     <string name="find_box_label">Найти ящик</string>
     <string name="groupbox_label">Дополнительно</string>
-    <string name="groupbox_item1">Состав ящик</string>
+    <string name="groupbox_item1">Состав ящика</string>
     <string name="groupbox_item2">Вызов SOS</string>
     <string name="groupbox_item3">Инструкция</string>
     <string name="change_lang_label">Поменять язык на казахский</string>
@@ -22,34 +22,52 @@
     <string name="call_sos_firefighters">Пожарные</string>
     <string name="call_sos_button">Отправить СМС о моем местоположении</string>
 
+
+    <!-- СОСТАВ ЯЩИКА !-->
+    <string name="sostav_label">Что внутри ящика?</string>
+    <string name="issues_item1">Сильное кровотечение</string>
+    <string name="issues_item2">Термический ожог</string>
+    <string name="issues_item3">Отравление угарным газом</string>
+    <string name="issues_item4">Дезинфицировать рану</string>
+    <string name="issues_item5">Тепловой удар</string>
+    <string name="issues_item6">Проблемы с сердцем</string>
+
+    <string name="issues_solves1">Используйте жгут для перевязки раны</string>
+    <string name="issues_solves2">Используйте марлевые бинты и перекись водорода</string>
+    <string name="issues_solves3">Используйте активированный уголь</string>
+    <string name="issues_solves4">Используйте лейкопластырь или бриллиантовый зеленый</string>
+    <string name="issues_solves5">Используйте ацетилсалициловую кислоту</string>
+    <string name="issues_solves6">Используйте нитроглицерин</string>
+    <string name="choose_bar_label">Предмет для решения проблемы</string>
+
     <string name="item1name">Изолирующий самоспасатель</string>
-    <string name="item1desc">Критически необходим для защиты дыхательных путей. Наденьте его на голову и выпустите клапон. Будет работать 20 минут в случае ходьбы и 6-8 минут в случае бега</string>
-    <string name="item2name">Две бутылки воды</string>
-    <string name="item2desc">Выпейте воды, чтобы снизить риск обезвоживания. Также можно охладить ожоги, промывать глаза от пыли и дыма</string>
+    <string name="item1desc">Критически необходим для защиты дыхательных путей. Наденьте его на голову и выпустите клапон. Будет работать 20 минут в случае ходьбы и 6–8 минут в случае бега.</string>
+    <string name="item2name">Два литра воды</string>
+    <string name="item2desc">Выпейте воды, чтобы снизить риск обезвоживания. Также можно охладить ожоги, промывать глаза от пыли и дыма.</string>
     <string name="item3name">Ацетилсалициловая кислота</string>
-    <string name="item3desc">Если вы старше 16 лет, приняйте 1 таблетку для снижения температуры при тепловом ударе или облегчения болевых симптомов</string>
+    <string name="item3desc">Если вы старше 16 лет, приняйте 1 таблетку для снижения температуры при тепловом ударе или облегчения болевых симптомов.</string>
     <string name="item4name">Марлевые бинты</string>
-    <string name="item4desc">Необходимы для фиксации повязок, остановки кровотечения. Хорошо впитывают влагу</string>
+    <string name="item4desc">Необходимы для фиксации повязок, остановки кровотечения. Хорошо впитывают влагу.</string>
     <string name="item5name">Нитроглицерин</string>
-    <string name="item5desc">Используйте для снятия симптомов сердечно-сосудистых заболеваний. Принимайте по одной таблетке под язык</string>
+    <string name="item5desc">Используйте для снятия симптомов сердечно-сосудистых заболеваний. Принимайте по одной таблетке под язык.</string>
     <string name="item6name">Бриллиантовый зеленый</string>
-    <string name="item6desc">Антисептик, наносите на раны для предотвращения инфекций</string>
+    <string name="item6desc">Антисептик, наносите на раны для предотвращения инфекций.</string>
     <string name="item7name">Жгут</string>
-    <string name="item7desc">Если у вас сильное кровотечение, жестко зафикситруйте жгут выше места травмы</string>
+    <string name="item7desc">Если у вас сильное кровотечение, жестко зафикситруйте жгут выше места травмы.</string>
     <string name="item8name">Перекись водорода</string>
     <string name="item8desc">Используйте для обработки ран и термических ожогов.</string>
     <string name="item9name">Лейкопластырь бакцерицидный</string>
-    <string name="item9desc">Нанесите на раны, чтобы защититься от инфекций.</string>
+    <string name="item9desc">Наносите на небольшие порезы, ссадины, царапины и другие мелкие повреждения кожи.</string>
     <string name="item10name">Уголь активированный</string>
-    <string name="item10desc">Примите внутрь и запейте водой при отравлении угарным газом или другими токсичными веществами</string>
+    <string name="item10desc">Примите внутрь и запейте водой при отравлении угарным газом или другими токсичными веществами.</string>
     <string name="item11name">Аммиак</string>
-    <string name="item11desc">Приподнесите к лицу, если чувствуете, что теряете сознание из-за недостатка кислорода</string>
+    <string name="item11desc">Приподнесите к лицу, если чувствуете, что теряете сознание из-за недостатка кислорода.</string>
     <string name="item12name">Корвалол</string>
-    <string name="item12desc">Примите для снятия стресса, не больше 15-20 капель с водой за раз</string>
+    <string name="item12desc">Примите для снятия стресса, не больше 15–20 капель с водой за раз.</string>
     <string name="item13name">Валидол</string>
     <string name="item13desc">Разместите под языком и рассасывайте для облегчения боли, связанной с сердечно-сосудистой системой или пищеварительным трактом.</string>
     <string name="item14name">Вата</string>
-    <string name="item14desc">Можно использовать для дополнительной обработки ран</string>
+    <string name="item14desc">Можно использовать для дополнительной обработки ран.</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -61,7 +79,7 @@
     <string name="login_failed">"Login failed"</string>
 
     <!-- Легенда карты !-->
-    <string name="navigation_label">Карта аңызы</string>
+    <string name="navigation_label">Легенда карты</string>
     <string name="navigation_first_mark">Ваше \nместоположение</string>
     <string name="navigation_second_mark">Полностью \nцелый ящик</string>
     <string name="navigation_third_mark">Частично \nиспользованный ящик</string>
@@ -80,4 +98,25 @@
     <string name="instruction4">Откройте ящик и достаньте нужные вещи. Внутри также информ. брошюра, а на коробке самоспасателя есть инструкция</string>
 
     <!-- SCREEN TOP BAR LABELS !-->
+
+    <!-- CASE INFO SCREEN !-->
+    <string name="video_button">Видео о самоспасателе</string>
+    <string name="video_dialog_label">Выберите видео о самоспасателе</string>
+    <string name="video_dialog_variant1">Общая информация</string>
+    <string name="video_dialog_variant2">О том, как его надевать</string>
+    <string name="close_video">Выключить видео</string>
+
+    <!-- AFTER FINDING !-->
+    <string name="after_finding_label">Какие компоненты ящика вы использовали?</string>
+    <string name="after_finding_edittext1_label">Введите номер ящика</string>
+    <string name="after_finding_edittext2_label">Дополнительная информация</string>
+    <string name="after_finding_senddata_button">Отправить данные</string>
+    <string name="after_finding_checkbox1">Изолирующий самоспасатель</string>
+    <string name="after_finding_checkbox2">Медицинская аптечка</string>
+    <string name="after_finding_checkbox3">Первая бутылка воды</string>
+    <string name="after_finding_checkbox4">Вторая бутылка воды</string>
+
+    <string name="snackbar_not_enough_data">Вы не заполнили все поля!</string>
+    <string name="snackbar_success">Данные отправлены! Спасибо за обратную связь!</string>
+
 </resources>
