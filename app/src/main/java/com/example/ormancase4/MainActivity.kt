@@ -177,6 +177,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                             val newMarker = MarkerOptions()
                             setMarkerData(newMarker, caseSnapshot, true)
                             markerOptionsList.add(newMarker)
+                            newMarker.zIndex(1f)
                             myMap.addMarker(newMarker)
                             allMarkersInitialized = true
                             closestCaseOptions = getClosestMarker(
@@ -191,6 +192,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                         for (caseSnapshot in snapshot.children) {
                             val newMarker = MarkerOptions()
                             setMarkerData(newMarker, caseSnapshot, true)
+                            newMarker.zIndex(1f)
                             markerOptionsList.add(newMarker)
                             myMap.addMarker(newMarker)
                             allMarkersInitialized = true
@@ -217,6 +219,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             )
         )
         userMarkerOptions.icon(icon)
+        userMarkerOptions.zIndex(10f)
         myMap.addMarker(userMarkerOptions)
     }
 

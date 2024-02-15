@@ -38,7 +38,7 @@
     <string name="issues_solves4">Используйте лейкопластырь или бриллиантовый зеленый</string>
     <string name="issues_solves5">Используйте ацетилсалициловую кислоту</string>
     <string name="issues_solves6">Используйте нитроглицерин</string>
-    <string name="choose_bar_label">Предмет для решения проблемы</string>
+    <string name="choose_bar_label">Средство для решения проблемы</string>
 
     <string name="item1name">Изолирующий самоспасатель</string>
     <string name="item1desc">Критически необходим для защиты дыхательных путей. Наденьте его на голову и выпустите клапон. Будет работать 20 минут в случае ходьбы и 6–8 минут в случае бега.</string>
